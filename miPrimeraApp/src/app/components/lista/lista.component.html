@@ -1,0 +1,25 @@
+<h2>------------ Mi Lista -----------</h2>
+<table class="col-6 table table-dark  table-hover table-bordered bg-info">
+    <thead class="table table-dark text-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Producto</th>
+            <th scope="col">Precio</th>
+            <th scope="col">stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="table-success" *ngFor="let j of producto; let i= index ">
+            <th scope="row">{{i}}</th>
+            <td>{{j.producto}}</td>
+            <td>${{j.precio}}</td>
+            <td>{{j.stock}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>total:</td>
+            <td [textContent]="total">{{total}}</td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,30 @@
+h1 {
+    color: red;
+    background-color: green;
+}
+
+h2 {
+    background-color: black;
+    color: antiquewhite;
+    align-self: center;
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+#parPrincipal-blue {
+    border: 1px solid blue;
+}
+
+#parPrincipal-green {
+    border: 1px solid rgb(0, 255, 64);
+}
+
+#green {
+    border: 5px solid rgb(0, 255, 64);
+}

@@ -1,0 +1,29 @@
+<article class="row col-12 d-flex ">
+    <!-- {{item | json}} -->
+    <h2>{{titulo}}</h2>
+    <div class="card text-white bg-primary  col " style="max-width: auto;" *ngFor="let item of productos; let i=index;">
+        <img [src]="item.imgUrl" alt="img">
+        <div class="card-header ">
+            <h5 class="card-title d-inline">$ {{item.precio}}</h5> | {{item.nombre}}
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{item.descripcion}}</p>
+        </div>
+        <div class="card-footer bg-transparent border-success">
+            <button class="btn btn-outline-danger" (click)="enviar(i,item)">Agregar <i class="bi bi-cart-plus-fill"></i></button>
+        </div>
+    </div>
+    <!-- <div class="card text-white bg-primary  col " style="max-width: auto;">
+        <img src="../../../assets/productos/bebida1.jpg" alt="img">
+        <div class="card-header">
+            <h5 class="card-title d-inline">{{titulo}}</h5> | Precio: $ 120
+        </div>
+        <div class="card-body">
+
+            <p class="card-text">Som } the card's content.</p>
+        </div>
+        <div class="card-footer bg-transparent border-success">
+            <button class="btn btn-outline-danger">Comprar</button>
+        </div>
+    </div> -->
+</article>

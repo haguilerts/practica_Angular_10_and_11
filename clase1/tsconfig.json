@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "target": "ES6",// en q vercion de js se ejecutara
+        "outDir": "build", // configuracion de salida
+        "noEmitOnError": true, // notificacion de erroes
+    }
+}

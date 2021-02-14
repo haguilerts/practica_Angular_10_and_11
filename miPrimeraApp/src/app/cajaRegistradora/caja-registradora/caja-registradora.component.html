@@ -1,0 +1,13 @@
+<section class="row col-12 ">
+    <div class="registro col-12 bg-info">
+        <app-registro-produc [recibiendoProducto]='prodSelec'></app-registro-produc>
+    </div>
+    <div class="producto col-12">
+        <!--  (agregar)='recibir($event)' -->
+        <app-producto titulo="Comida" [productos]='arrComida' (cambiarHijo)='funcion($event)' (agregar)="recibir($event)"></app-producto>
+        <app-producto titulo="Bebida" [productos]='arrBebida' (agregar)="recibir($event)"></app-producto>
+
+    </div>
+
+    <!-- json: {{prodSelec | json }} -->
+</section>

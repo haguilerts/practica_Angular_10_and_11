@@ -1,0 +1,6 @@
+<section class="d-flex flex-grow text-center ">
+    <div class="semaforo " [ngClass]="'rojo'">1</div>
+    <div [ngClass]="cadenaClass">2</div>
+    <div [ngClass]="arrayClass">3</div>
+    <div class="{{arrayClass[1]}}" [ngClass]="{semaforo:true,verde:(colorSeleccionado==='v'),amarillo:(colorSeleccionado==='a'),azul:(colorSeleccionado==='b')}">4</div>
+</section>

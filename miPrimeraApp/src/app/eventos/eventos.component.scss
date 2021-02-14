@@ -1,0 +1,30 @@
+.cuadrado {
+    width: 75%;
+    height: 6rem;
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+
+.verde {
+    background-color: cyan;
+    border-radius: 10px;
+    border: 5px solid rgb(1, 168, 168);
+}
+
+.amarillo {
+    background-color: yellow;
+    border-radius: 10px;
+    border: 5px solid rgb(139, 182, 22);
+}
+
+.foco {
+    border-radius: 10px;
+    border: 10px solid green;
+    color: green;
+}
+
+.blur {
+    border-radius: 10px;
+    border: 10px solid blue;
+    color: blue;
+}

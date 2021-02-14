@@ -1,0 +1,33 @@
+<h4 class="red">componente hijo 1</h4>
+<div>
+    <p *ngIf="!mostrar" class="text-light fw-bold fs-5 bg-dark">*ngIf="false" / *ngIf="!true" then text_1 else text_2 /</p>
+    <p *ngIf="mostrar" class="text-light fw-bold fs-5 bg-info">*ngIf="true" / true: muestra | false: ocualta</p>
+    <p *ngIf="mostrar; else  elseBlock" class="text-primary fw-bold fs-5"> 0,0*** texto: true ***</p>
+    <p *ngIf="mostrar; then trueBlock else  elseBlock" class="text-primary fw-bold fs-5"> </p>
+    <ng-template #trueBlock>
+        <p class="text-light fw-bold fs-5"> 0,1### texto: true ###</p>
+    </ng-template>
+    <ng-template #elseBlock>
+        <p class="text-secondary fw-bold fs-5 bg-light"> 1 ... texto: false ...</p>
+    </ng-template>
+</div>
+<button (click)="onClikMostrar()" class="btn " [ngClass]="arrayClass">{{btn}} </button>
+
+
+<section>
+    <b>listas *ngFor="let item of objFor; let i= index" </b>
+    <ul class="list-group w-50" *ngFor="let item of objFor; let i= index">
+        <li class="list-group-item text-dark">{{i}}:
+            <span class="badge text-dark">{{item.name}}</span>
+            <span class="badge text-dark">{{item.age}}</span>
+        </li>
+    </ul>
+</section>
+<section [ngSwitch]='opSwich'>
+    <p class="text-light fs-4 fw-bold">ngSwitch='varible' / *ngSwitchCase='1' / *ngSwitchDefault</p>
+    <p *ngSwitchCase='1' class="text-light  fs-5 fw-bold">*opcion 1</p>
+    <p *ngSwitchCase='2' class="text-light  fs-5 fw-bold">*opcion 2</p>
+    <p *ngSwitchCase='3' class="text-light  fs-5 fw-bold">*opcion 3</p>
+    <p *ngSwitchCase='4' class="text-light  fs-5 fw-bold">*opcion 4</p>
+    <p *ngSwitchDefault class="text-dark  fs-5 fw-bold">* ninguna..</p>
+</section>

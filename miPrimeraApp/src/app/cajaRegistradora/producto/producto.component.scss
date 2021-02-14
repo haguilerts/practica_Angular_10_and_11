@@ -1,0 +1,23 @@
+.d-flex {
+    // justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    div {
+        margin: 0.5em;
+    }
+}
+
+.card {
+    cursor: pointer;
+    min-width: 220px;
+    max-width: 230px;
+}
+
+img {
+    margin-top: 0.5em;
+    width: 100%;
+    min-width: 200px;
+    height: 174px;
+}

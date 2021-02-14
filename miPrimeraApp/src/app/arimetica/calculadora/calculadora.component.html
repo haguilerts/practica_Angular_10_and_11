@@ -1,0 +1,32 @@
+<p>calculadora works!</p>
+<section class="col-12 p-3 bg-primary">
+    <h2 class="text-center text-light">Calculadora nivel 2</h2>
+    <article class="row ">
+        <div class="col-10">
+            <div class="col-12 mb-2 ">
+                <input class="ressultado  col w-100 d-inline form-control text-center fs-2 fw-bold" type="text" value="{{res}}">
+            </div>
+            <div class="col-12 ">
+                <button (click)="onclick($event,1)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">1</button>
+                <button (click)="onclick($event,2)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">2</button>
+                <button (click)="onclick($event,3)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">3</button>
+                <button (click)="onclick($event,4)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">4</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">5</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">6</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">7</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">8</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">9</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-3 fw-bold" type="submit">0</button>
+                <button (click)="onclick($event)" class="col-4 btn btn-outline-light fs-2 fw-bold" type="submit">.</button>
+                <button (click)="resultado($event)" class="col-4 btn btn-outline-light fs-2 fw-bold" type="submit">=</button>
+            </div>
+        </div>
+        <div class="col-2 d-flex flex-column p-0">
+            <input (click)="clear()" class=" col w-100  btn btn-outline-light text-center fs-2 fw-bold p-1" type="reset" value="DEL">
+            <button (click)="onclick($event)" class="col btn btn-outline-dark fs-2 fw-bold" type="submit">+</button>
+            <button (click)="onclick($event)" class="col btn btn-outline-dark fs-2 fw-bold" type="submit">-</button>
+            <button (click)="onclick($event)" class="col btn btn-outline-dark fs-2 fw-bold" type="submit">*</button>
+            <button (click)="onclick($event)" class="col btn btn-outline-dark fs-2 fw-bold" type="submit">/</button>
+        </div>
+    </article>
+</section>

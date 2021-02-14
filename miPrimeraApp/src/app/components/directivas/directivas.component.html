@@ -1,0 +1,16 @@
+<p [ngStyle]="{color:'green',fontSize:'24px'}">Directiva: Atributos && Estructurados</p>
+<ul>
+    <li [ngStyle]="style1">cualquier de los elemntos que representamos dentro de las plantillas de nuestras paginas web,ya sea etiquetas o atributos.</li>
+    <li>Por lo tanto, los componentes que definamos en nuestras aplicaciones, tambien puede ser considerado como directivas.</li>
+    <li>En este caso, lo descartable es que estas derectivas especiales lleven asociadas una plantilla html</li>
+</ul>
+<div>
+    <button (click)="cambiarColor('a')" class="btn btn-primary m-1">azul</button>
+    <button (click)="cambiarColor('c')" class="btn btn-info m-1">celeste</button>
+    <button (click)="cambiarColor('v')" class="btn btn-warning m-1">verde</button>
+</div>
+<div>
+    <input type="text" [(ngModel)]='style1.color' placeholder="ingrese el color de texto"> <br> font-size:
+    <input type="range" min="10" max="28" step="1" (input)="onInput($event)">
+</div>
+<app-semafor></app-semafor>

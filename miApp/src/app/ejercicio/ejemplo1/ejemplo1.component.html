@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row col">
+        <p>{{objeto}}</p>
+        <p>OBJ: {{objeto.id}} | {{objeto.name}} | {{objeto.age}} | {{objeto.sexo}}</p>
+        <h2 class="col-6 text-light" *ngIf="objeto.age >=18" [style.background-color]="objeto.age >=18 ?'green':'red'">
+            sos mayor de edad!!
+        </h2>
+        <h2 class="col-6 text-light" *ngIf="objeto.age <18" [style.background-color]="objeto.age <18 ?'red':'green'">
+            sos Menor de edad!!
+        </h2>
+        <div class="col-6">
+            <button class="btn btn-danger" (click)="aumentarAge()">Aumentar Age</button>
+            <button class="btn btn-dark" (click)="disminuirAge()">Disminuir Age</button>
+        </div>
+        <div class="col-6">
+            <table border="1">
+                <tbody>
+                    <ul>
+                        <li *ngFor="let name of nombres; let i= index ">{{i}}: {{name}}</li>
+                    </ul>
+                    <ul>
+                        <li *ngFor="let edad of edades ; let i= index ">{{"["+i+"]: " + edad}}</li>
+                    </ul>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col">
+        <div class="col bg-dark text-light">
+            <h1>Date</h1>
+            <p>fecha: {{fecha}}</p>
+            <p>fecha: {{fecha | date:'medium'}}</p>
+            <p>hora: {{fecha | date:'hh:mm:ss' }}</p>
+            <p>hora: {{fecha | date:'shortTime'}}</p>
+            <p>mes: {{fecha | date:'MMMM'}}</p>
+            <a href="https://angular.io/api/common/DatePipe"> --- mas ---</a> <br>
+            <a href="https://angular.io/api/common/DatePipe#description">**** para mas api ****</a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="col bg-info">
+        <div class="col">
+            <label for="name"> nombre:  </label>
+            <input [(ngModel)]='objeto.name' type="text" placeholder="name" id="name">
+        </div>
+        <div class="col">
+            <label for="age"> Edad:  </label>
+            <input [(ngModel)]='objeto.age' type="text" placeholder="edad" id="age">
+        </div>
+
+    </div>
+</div>

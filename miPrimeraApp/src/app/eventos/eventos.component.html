@@ -1,0 +1,25 @@
+<h3 class="border border-bottom-1  text-center">Click</h3>
+<section>
+    <button (click)="onclick()" class="btn btn-outline-dark fw-bold fs-3 ">¡¡ Pulsar !!</button>
+    <button (click)="clickEvent($event)" class="btn btn-outline-primary fw-bold fs-3 ">¡¡ click !!</button>
+</section>
+
+<h3 class="border border-bottom-1  text-center">change</h3>
+<select (change)="onchange($event)" class="">
+    <option value="cero">selecionar</option>
+    <option value="uno">1</option>
+    <option value="dos">2</option>
+    <option value="tres">3</option>
+</select>
+
+<h3 class="border border-bottom-1 text-center">mouseenter / mouseout</h3>
+<section class="color cuadrado  text-center" (mouseenter)="onMauseEnter()" (mouseout)="onMauseOut()">Evento <strong>{{evento}}</strong></section>
+
+<h3 class="border border-bottom-1  text-center">change / input / fovus / blur</h3>
+<form>
+    <div class="form-group">
+        <label for="name">Ingrese su nombre:</label>
+        <input class="form-control w-50 " type="text" id="name" (change)="onChangeImput($event)" (input)="onImput($event)" (focus)="onFocus($event)" (blur)="onBlur($event)" placeholder="ingrese su nombre">
+        <p class="res form-text text-dark fs-4 ">nombre ingresado es: {{nombre}}</p>
+    </div>
+</form>
