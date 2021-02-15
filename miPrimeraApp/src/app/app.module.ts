@@ -24,6 +24,10 @@ import { MainComponent } from './main/main.component';
 import { ProductoComponent } from './cajaRegistradora/producto/producto.component';
 import { RegistroProducComponent } from './cajaRegistradora/registro-produc/registro-produc.component';
 import { CajaRegistradoraComponent } from './cajaRegistradora/caja-registradora/caja-registradora.component';
+import { SubrayadoDirective } from './directivas/subrayado.directive';
+import { ListProducComponent } from './ListaCompras/list-produc/list-produc.component';
+import { ComprasListComponent } from './ListaCompras/compras-list/compras-list.component';
+import { MyFormularioComponent } from './ListaCompras/my-formulario/my-formulario.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { CajaRegistradoraComponent } from './cajaRegistradora/caja-registradora/
     MainComponent,
     ProductoComponent,
     RegistroProducComponent,
-    CajaRegistradoraComponent
+    CajaRegistradoraComponent,
+    SubrayadoDirective,
+    ListProducComponent,
+    ComprasListComponent,
+    MyFormularioComponent
   ],
   imports: [
     BrowserModule,

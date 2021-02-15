@@ -1,0 +1,14 @@
+<p>app-compras-list</p>
+<div class="container-fluid row col-12 bg-light">
+    <div class="row col-12">
+        <app-my-formulario (producCreado)="onProductocreado($event)"></app-my-formulario>
+    </div>
+    <div class="row col-12 overflow-auto ">
+        <div class="col-6">
+            <app-list-produc [ProdArry]='PorductSelect'></app-list-produc>
+        </div>
+        <div class="col-6">
+            <app-list-produc></app-list-produc>
+        </div>
+    </div>
+</div>

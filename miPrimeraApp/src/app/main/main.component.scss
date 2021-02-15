@@ -28,3 +28,19 @@ p {
 #green {
     border: 5px solid rgb(0, 255, 64);
 }
+
+.siHover {
+    font-family: cursive;
+    color: red;
+    background: white;
+    width: 90%;
+    text-align: center;
+}
+
+.noHover {
+    font-family: fantasy;
+    font-weight: bold;
+    color: white;
+    background: red;
+    width: 100%;
+}
