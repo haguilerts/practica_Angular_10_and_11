@@ -8,7 +8,10 @@ import { Producto } from 'src/app/models/productos.models';
 })
 export class ListProducComponent implements OnInit {
   @Input() ProdArry:Producto;
-  constructor() { }
+  
+  constructor() { 
+
+  }
 
   ngOnInit(): void {
   }

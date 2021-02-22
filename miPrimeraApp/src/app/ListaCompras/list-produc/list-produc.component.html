@@ -3,14 +3,13 @@
     <div class="card text-dark bg-light mb-3 w-50" style="min-width: 10rem;" *ngFor="let item of ProdArry;">
         <img [src]="item.img" alt="img" class="card-img">
         <div class="card-body card-img-overlay text-light" style="background-color: rgba(33, 4, 139, 0.568);">
-            <h2 class="card-title">{{item.producto}} x {{item.cantidad}}</h2>
+            <h2 class="card-title">{{item.producto.toUpperCase()}} x {{item.cantidad}}</h2>
             <h5 class="card-title text-center d-inline-block">ARG $ {{item.precio}}</h5>
             <div class="card-header text-center">{{item.descripcion}}</div>
-
+            <button class="btn btn-outline-danger w-100 text-center">Comprar <i class="bi bi-cart-check"></i></button>
         </div>
         <div class="card-footer bg-transparent border-success">saludos, Muchas Gracias!
         </div>
-
 
     </div>
 </div>
