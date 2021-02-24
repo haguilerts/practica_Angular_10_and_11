@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/services/persona.model';
 import { PersonasService } from 'src/app/services/personas.service';
 //import { FormsModule } from '@angular/forms';
@@ -14,7 +15,7 @@ export class IngresarUsuariosComponent implements OnInit {
   apellido:string;
   edad:number;
   activo:boolean;
-  constructor(private perosnaService:PersonasService) { 
+  constructor(private perosnaService:PersonasService, private router:Router) { 
     this.arrPerosna=this.perosnaService.getAll()
     this.nombre=''
     this.apellido=''
@@ -25,8 +26,8 @@ export class IngresarUsuariosComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  enviar(){
+  enviar( pag:string){
     this.perosnaService.setAll(new Persona(this.nombre,this.apellido,this.edad,this.activo))
-
+    this.router.navigate([pag]); 
   }
 }
