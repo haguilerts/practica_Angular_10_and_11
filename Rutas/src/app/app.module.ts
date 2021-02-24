@@ -11,6 +11,8 @@ import { DetalleEmpledoComponent } from './components/detalle-empledo/detalle-em
 import { ProyectosComponent } from './components/DetalleEmpledo/proyectos/proyectos.component';
 import { CvComponent } from './components/DetalleEmpledo/cv/cv.component';
 import { ExperienciaComponent } from './components/DetalleEmpledo/experiencia/experiencia.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { IngresarUsuariosComponent } from './components/ingresar-usuarios/ingresar-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ExperienciaComponent } from './components/DetalleEmpledo/experiencia/ex
     DetalleEmpledoComponent,
     ProyectosComponent,
     CvComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    UsuariosComponent,
+    IngresarUsuariosComponent
   ],
   imports: [
     BrowserModule,

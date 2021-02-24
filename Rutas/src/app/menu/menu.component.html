@@ -7,13 +7,39 @@
                 <a class="list-group-item list-group-item-action" [routerLink]='["/perfil"]' routerLinkActive='activa'>prefil</a>
             </div>
         </div>
-        <div class="col-4 d-flex flex-column mt-2">
+        <div class="col-3 d-flex flex-column mt-2">
             <button class="btn btn-outline-primary" (click)='onclick("home")'>inicio</button>
-            <button class="btn btn-outline-primary" (click)='onclick("mensaje")'>mensaje</button>
+            <button class="btn btn-outline-primary my-2" (click)='onclick("mensaje")'>mensaje</button>
             <button class="btn btn-outline-primary" (click)='onclick("perfil")'>perfil</button>
+
+            <div class="btn-group my-2">
+                <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Empleados
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)='onclick("empleados/1/cv")'>Cv</a></li>
+                    <li><a class="dropdown-item" (click)='onclick("empleados/2/exp")'>Experiencia</a></li>
+                    <li><a class="dropdown-item" (click)='onclick("empleados/3/pro")'>Proyecto</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" (click)='onclick("home")'>salir</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-outline-primary" (click)='onclick("empleados/5/pro")'>Empleado Proyecto</button>
+            <button class="btn btn-outline-primary" (click)='onclick("usuarios")'>Servicio Personas</button>
+            <div class="btn-group my-2">
+                <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Servicio Personas
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)='onclick("usuarios")'>Mostrar</a></li>
+                    <li><a class="dropdown-item" (click)='onclick("ingresarUsu")'>Ingresar</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-8">
-            <div class="tab-content" id="nav-tabContent">
+        <div class="col-9">
+            <div class="tab-content border border-1 " id="nav-tabContent">
                 <router-outlet></router-outlet>
             </div>
         </div>

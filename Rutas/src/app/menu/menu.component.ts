@@ -15,8 +15,15 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
   onclick(pRuta:string){
-    console.log(this.router.navigate([pRuta]))
-    this.router.navigate([pRuta]); 
-    // atraves del obj ruter accedo al "app-routing-module.ts" cambiarle la ruta del link. pasando como paramereo la pag
+      console.log(this.router.navigate([pRuta]))
+      this.router.navigate([pRuta]); 
+      // atraves del obj ruter accedo al "app-routing-module.ts" cambiarle la ruta del link. pasando como paramereo la pag
+      //const id=Math.random()
+      /*if(id>0.2 && id<0.6){
+        console.log('ingresando..: '+id)
+        this.router.navigate([`${pRuta}/${id}/exp`]); 
+      }else{
+        console.log('no ingresooo: '+id)
+      }*/
   }
 }

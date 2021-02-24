@@ -7,14 +7,18 @@ import { DetalleEmpledoComponent } from './components/detalle-empledo/detalle-em
 import { ProyectosComponent } from './components/DetalleEmpledo/proyectos/proyectos.component';
 import { CvComponent } from './components/DetalleEmpledo/cv/cv.component';
 import { ExperienciaComponent } from './components/DetalleEmpledo/experiencia/experiencia.component';
+import { RamdomGuard } from './ramdom.guard';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { IngresarUsuariosComponent } from './components/ingresar-usuarios/ingresar-usuarios.component';
+
 
 const routes: Routes = [
-  {path:'', pathMatch:'full', redirectTo: 'mensaje'},
+  {path:'', pathMatch:'full', redirectTo: 'mensaje'} ,
   {path:'inicio', redirectTo:'home'},
   {path:'hogar', component:   HogarComponent},
   {path:'home', component:   HogarComponent},
   {path:'msn', redirectTo:'mensaje'},
-  {path:'mensaje',component:  MensajeComponent},  
+  {path:'mensaje',component:  MensajeComponent, canActivate:[RamdomGuard]},  
   {path:'perfil',component:   PerfilComponent},
   {path:'empleados/:idEmpleado', component: DetalleEmpledoComponent, children:[ 
       {path:'cv',component: CvComponent},
@@ -22,6 +26,8 @@ const routes: Routes = [
       {path:'pro',component: ProyectosComponent},
     ]
   },
+  {path:'usuarios',component: UsuariosComponent},
+  {path:'ingresarUsu',component: IngresarUsuariosComponent},
   {path:'**', redirectTo:'home'},
 ];
 
