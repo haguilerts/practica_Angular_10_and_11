@@ -10,7 +10,7 @@
     </thead>
     <tbody>
 
-        <tr class="table-light" *ngFor="let item of person; let i=index;">
+        <tr class="table-light" *ngFor="let item of ArryPerson; let i=index;">
             <th scope="row">{{i}}</th>
             <td>{{item.nombre}}</td>
             <td>{{item.apellido}}</td>
@@ -20,3 +20,5 @@
 
     </tbody>
 </table>
+<button *ngIf="mostrarBtn" class="btn btn-outline-danger" (click)="onclickTodo()">Mostar Todo</button>
+<button *ngIf="!mostrarBtn" class="btn btn-outline-danger" (click)="onclickActivosAwait()">Usuarios Activas</button>
