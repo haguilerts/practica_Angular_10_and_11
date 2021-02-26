@@ -1,32 +1,32 @@
-<h1>Bienvenido a mi Pagina WEB</h1>
 <header class="container-fluid">
-    <nav class="row">
-        <ul class="nav nav-pills">
+    <nav class="row navbar-dark bg-dark" style="background-color: #01070c;">
+        <ul class="nav nav-pills d-flex justify-content-md-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                <a class="nav-link dropdown-toggle btn-outline-danger" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">List Product</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item btn-outline-danger" href="#">lista 1</a></li>
+                    <li><a class="dropdown-item btn-outline-danger" href="#">lista 2</a></li>
+                    <li><a class="dropdown-item btn-outline-danger" href="#">lista 3</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    <li><a class="dropdown-item btn-outline-primary" href="#">lista 4</a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link btn-outline-primary" href="#">Productos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pagos</a>
             </li>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </ul>
+
     </nav>
 </header>
-<main class="container-fluid">
-    <router-outlet></router-outlet>
-
-</main>

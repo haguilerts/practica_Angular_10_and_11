@@ -4,130 +4,144 @@ import{Perfil} from '../modelo/perfin.model'
 export const Cantantes:Perfil[]=[
     {
         id:1,
-        noombre:'Edwans',
+        nombre:'Edwans',
         apellido:'Silvio',
         img:'../../assets/img/img_cantante/edwans.jpg',
         edad:25,
         sexo:true,
-        pais:'EEUU',
+        pais:'URU',
+        profecion:'Cantante'
     },
     {
         id:3,
-        noombre:'Justin',
+        nombre:'Justin',
         apellido:'Beber',
         img:'../../assets/img/img_cantante/justin_biber.jpg',
         edad:17,
         sexo:true,
-        pais:'CAN',
+        pais:'BRA',
+        profecion:'Cantante'
     },
     {
         id:4,
-        noombre:'Maicol',
+        nombre:'Maicol',
         apellido:'Jason',
         img:'../../assets/img/img_cantante/maicol_Jason.jpg',
         edad:35,
         sexo:true,
-        pais:'POR',
+        pais:'ARG',
+        profecion:'Cantante'
     },
     {
         id:5,
-        noombre:'Ricki',
+        nombre:'Ricki',
         apellido:'Martin',
         img:'../../assets/img/img_cantante/ricki_martin.jpg',
         edad:32,
         sexo:true,
-        pais:'PAR',
+        pais:'ARG',
+        profecion:'Cantante'
     },
     {
         id:6,
-        noombre:'Selena',
+        nombre:'Selena',
         apellido:'Gomes',
         img:'../../assets/img/img_cantante/selena_gomes.jpg',
         edad:17,
         sexo:false,
-        pais:'URG',
+        pais:'BRA',
+        profecion:'Cantante'
     },
 ]
 export const Futbolistas:Perfil[]=[
     {
         id:1,
-        noombre:'maycol',
+        nombre:'maycol',
         apellido:'Gomes',
         img:'../../assets/img/img_futbol/hm1.jpg',
         edad:8,
         sexo:true,
         pais:'ARG',
+        profecion:'futbolista'
     },
     {
         id:2,
-        noombre:'Samuel',
+        nombre:'Samuel',
         apellido:'Gimenes',
         img:'../../assets/img/img_futbol/hm2.jpg',
         edad:12,
         sexo:true,
         pais:'URU',
+        profecion:'futbolista'
     },
     {
         id:3,
-        noombre:'messi',
+        nombre:'messi',
         apellido:'Taco',
         img:'../../assets/img/img_futbol/hy1.jpg',
         edad:32,
         sexo:true,
         pais:'ARG',
+        profecion:'futbolista'
     },
     {
         id:4,
-        noombre:'Rickelmes',
+        nombre:'Rickelmes',
         apellido:'Santos',
         img:'../../assets/img/img_futbol/hy2.jpg',
         edad:30,
         sexo:true,
         pais:'ARG',
+        profecion:'futbolista'
     },
     {
         id:5,
-        noombre:'Maria',
+        nombre:'Maria',
         apellido:'Flores',
         img:'../../assets/img/img_futbol/mm1.jpg',
         edad:18,
         sexo:false,
         pais:'BRA',
+        profecion:'futbolista'
     },
     {
         id:6,
-        noombre:'Mayra',
+        nombre:'Mayra',
         apellido:'sua',
         img:'../../assets/img/img_futbol/mm2.png',
         edad:12,
         sexo:false,
-        pais:'PER',
+        pais:'BRA',
+        profecion:'futbolista'
     },
     {
         id:7,
-        noombre:'Jimena',
+        nombre:'Jimena',
         apellido:'Ruis',
         img:'../../assets/img/img_futbol/mm3.png',
         edad:15,
         sexo:false,
-        pais:'CHI',
+        pais:'URU',
+        profecion:'futbolista'
     },
     {
         id:8,
-        noombre:'Daiana',
+        nombre:'Daiana',
         apellido:'Ruiz',
         img:'../../assets/img/img_futbol/my1.jpeg',
         edad:23,
         sexo:false,
         pais:'ARG',
+        profecion:'futbolista'
     },
     {
         id:9,
-        noombre:'silvia',
+        nombre:'silvia',
         apellido:'Son',
         img:'../../assets/img/img_futbol/my2.jpg',
         edad:28,
         sexo:false,
-        pais:'PAR',
+        pais:'URU',
+        profecion:'futbolista'
     },
 ]

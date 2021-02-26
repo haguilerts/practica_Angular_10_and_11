@@ -1,1 +1,56 @@
-<p>mostra-perfil works!</p>
+<section class="col-12 d-flex justify-content-evenly  ">
+    <select (change)="onChange($event)">
+        <option value="0">Ordernar por Pais</option>
+        <option value="ARG">Argentina</option>    
+        <option value="URU">Uruguay</option>
+        <option value="BRA">Brasil</option>
+        <option value="todos">=>Todos=></option>
+    </select>
+    <select>
+        <option value="0">Ordernar por Edad</option>
+        <option value="MAY">Mayor</option>    
+        <option value="MEN">Menor</option>
+    </select>
+    <select>
+        <option value="0">Ordernar por Sexo</option>
+        <option value="MAX">Hombre</option>    
+        <option value="FEM">Mujer</option>
+    </select>
+    <select>
+        <option value="0">Ordernar por Profecion</option>
+        <option value="CAN">Cantante</option>    
+        <option value="FUT">Futboolista</option>
+    </select>
+    <ul class="nav nav-pills d-flex justify-content-md-end bg-danger">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ordernar el ID</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item btn-outline-primary">lista 1</a></li>
+                <li><a class="dropdown-item btn-outline-primary">lista 2</a></li>
+                <li><a class="dropdown-item btn-outline-primary">lista 3</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item btn-outline-primary" href="#">todos</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="d-flex justify-content-center align-items-center flex-wrap ">
+    <article class="card  mx-2 my-2" style="width: 18rem;" *ngFor="let items of arryPersonas; let i= index ">
+        <img [src]="items.img" class="card-img-top" alt="..." style="width: 100%;  max-height: 170px; ">
+        <div class="card-header text-center d-flex">
+            <small class="text-muted">.{{i}}</small>
+            <h5 class="ms-auto">{{items.profecion}}</h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title ">-{{items.id}} - {{items.nombre}} {{items.apellido}} </h5>
+            <p class="card-text fs-6 fw-normal d-flex justify-content-xl-between"> Edad: <strong>{{items.edad}} Años </strong>__Sexo: <strong> {{items.sexo}}</strong> </p>
+        </div>
+        <div class="card-footer text-muted d-flex">
+            <small class="d-inline-block me-auto">{{items.pais}}/ Fecha </small>
+            <a href="#" class="btn btn-primary ms-auto">Ingresar</a>
+        </div>
+    </article>
+</section>

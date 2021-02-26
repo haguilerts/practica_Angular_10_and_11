@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MostraPerfilComponent
+    MostraPerfilComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
