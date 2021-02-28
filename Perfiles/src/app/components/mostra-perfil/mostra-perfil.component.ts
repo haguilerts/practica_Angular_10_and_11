@@ -10,6 +10,7 @@ import { ServicioGlobalService } from 'src/app/services/servicio-global.service'
 export class MostraPerfilComponent implements OnInit {
   arryPersonas:Perfil[];
   sexo:string;
+
   constructor( private persServis:ServicioGlobalService) {
     persServis.sumaPersonas()    
     this.arryPersonas=[]
@@ -31,7 +32,7 @@ export class MostraPerfilComponent implements OnInit {
     (await this.persServis.getPromiseFutb()).map(i=> this.arryPersonas.push(i))
    
   }
-  async onChange(e:any){
+  async onChangePais(e:any){
     console.log(`pulsado: ${e.target.value}`)
     console.log(this.persServis.getPersonasArray())
     console.log( await this.persServis.getByPais(e.target.value) );
@@ -42,6 +43,34 @@ export class MostraPerfilComponent implements OnInit {
     }
     
   }
-
+  async onChangeEdad(e:any){
+    let edad=document.querySelectorAll('.edad')
+    edad.forEach(i=> i.classList.add('colorGreen'))   
+  
+    if(e.target.value==='MAY'){
+      this.arryPersonas= await this.persServis.getByEdad(true);  
+    }else  if(e.target.value==='MEN'){
+      this.arryPersonas= await this.persServis.getByEdad(false); 
+         
+    }
+    console.log(`ninguno`)
+    //this.arryPersonas=this.persServis.getPersonasArray()  
+    
+  }
+  async onChangeSexo(e:any){
+    if(e.target.value==='MAX'){
+      this.arryPersonas= await this.persServis.getBySexo(true);  
+      console.log( await this.persServis.getBySexo(true))
+    } else  if(e.target.value==='FEM'){
+      this.arryPersonas= await this.persServis.getBySexo(false);  
+    }
+  }
+  async onChangeProfecion(e:any){
+    if(e.target.value==='CAN'){
+      this.arryPersonas= await this.persServis.getCantantes();      
+    } else  if(e.target.value==='FUT'){
+      this.arryPersonas= await this.persServis.getFutbolistas();  
+    } 
+  }
 
 }

@@ -1,22 +1,22 @@
 <section class="col-12 d-flex justify-content-evenly  ">
-    <select (change)="onChange($event)">
+    <select (change)="onChangePais($event)">
         <option value="0">Ordernar por Pais</option>
         <option value="ARG">Argentina</option>    
         <option value="URU">Uruguay</option>
         <option value="BRA">Brasil</option>
         <option value="todos">=>Todos=></option>
     </select>
-    <select>
+    <select (change)="onChangeEdad($event)">
         <option value="0">Ordernar por Edad</option>
         <option value="MAY">Mayor</option>    
         <option value="MEN">Menor</option>
     </select>
-    <select>
+    <select (change)="onChangeSexo($event)">
         <option value="0">Ordernar por Sexo</option>
         <option value="MAX">Hombre</option>    
         <option value="FEM">Mujer</option>
     </select>
-    <select>
+    <select (change)="onChangeProfecion($event)">
         <option value="0">Ordernar por Profecion</option>
         <option value="CAN">Cantante</option>    
         <option value="FUT">Futboolista</option>
@@ -46,7 +46,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title ">-{{items.id}} - {{items.nombre}} {{items.apellido}} </h5>
-            <p class="card-text fs-6 fw-normal d-flex justify-content-xl-between"> Edad: <strong>{{items.edad}} Años </strong>__Sexo: <strong> {{items.sexo}}</strong> </p>
+            <p class="card-text fs-6 fw-normal d-flex justify-content-xl-between"> Edad: <strong class="edad">{{items.edad}} Años </strong>__Sexo: <strong id="sexo"> {{items.sexo}}</strong> </p>
         </div>
         <div class="card-footer text-muted d-flex">
             <small class="d-inline-block me-auto">{{items.pais}}/ Fecha </small>
