@@ -1,4 +1,6 @@
+import { NgModuleResolver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Perfil } from 'src/app/modelo/perfin.model';
 import { ServicioGlobalService } from 'src/app/services/servicio-global.service';
 
@@ -11,7 +13,7 @@ export class MostraPerfilComponent implements OnInit {
   arryPersonas:Perfil[];
   sexo:string;
 
-  constructor( private persServis:ServicioGlobalService) {
+  constructor( private persServis:ServicioGlobalService, private router:Router) {
     persServis.sumaPersonas()    
     this.arryPersonas=[]
     this.sexo=''
@@ -71,6 +73,10 @@ export class MostraPerfilComponent implements OnInit {
     } else  if(e.target.value==='FUT'){
       this.arryPersonas= await this.persServis.getFutbolistas();  
     } 
+  }
+  mostrarDetalles(prof:string,id:number){
+    console.log(prof,id)
+    this.router.navigate([`detalles/${prof}/${id}/musicas`]); 
   }
 
 }

@@ -1,0 +1,23 @@
+<div>
+    <button class="btn btn-outline-warning" (click)="volverInicio()"> "<<--"Volver</button>
+</div>
+<section class=" container d-flex justify-content-center align-items-center flex-wrap ">
+    <article class="card col-12 col-md-6  mx-2 my-2" style="width: 30rem;">
+        <img [src]="detallesPerfil.img" class="card-img-top" alt="..." style="width: 100%;  max-height: 300px; ">
+        <div class="card-header text-center d-flex">
+            <small class="text-muted">.</small>
+            <h5 class="ms-auto">{{detallesPerfil.profecion}}</h5>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title ">-{{detallesPerfil.id}} - {{detallesPerfil.nombre}} {{detallesPerfil.apellido}} </h5>
+            <p class="card-text fs-6 fw-normal d-flex justify-content-xl-between"> Edad: <strong class="edad">{{detallesPerfil.edad}} Años </strong>__Sexo: <strong id="sexo"> {{detallesPerfil.sexo}}</strong> </p>
+        </div>
+        <div class="card-footer text-muted d-flex">
+            <small class="d-inline-block me-auto">{{detallesPerfil.pais}}/ Fecha </small>
+        </div>
+    </article>
+    <article class="col-12 col-md-6" style='background: rgb(187, 187, 187);'>
+        <router-outlet></router-outlet>
+    </article>
+
+</section>

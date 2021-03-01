@@ -107,4 +107,19 @@ export class ServicioGlobalService {
      
     })
   }
+  //------------------------------------------------------------
+
+  getByID(Prof:string,id:number):Promise<Perfil>{
+    return new Promise((resolve,rejects)=>{
+      let arryFitro:Perfil= new Perfil(0,'','','',0,false,'','')
+      for (const i of this.humano) {
+        if(i.id===id && i.profecion==Prof){
+          arryFitro=i
+          //console.log(i)          
+        }
+      }
+      console.log(`arrayFiltro: ${arryFitro}`)
+      resolve(arryFitro)
+    })
+  }
 }
