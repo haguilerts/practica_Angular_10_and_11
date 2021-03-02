@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style>
+        .caja {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aliceblue;
+        }
+        
+        .caja-min {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cajaAzul {
+            background: rgba(0, 0, 255, 0.904);
+        }
+        
+        .cajaRojo {
+            background: rgba(255, 0, 0, 0.904);
+        }
+        
+        .cajaVerde {
+            background: rgba(72, 255, 0, 0.904);
+        }
+        
+        .azul {
+            background: rgba(0, 0, 255, 0.904);
+            position: relative;
+            left: 3.5em;
+            top: 1.5em;
+            z-index: -3;
+        }
+        
+        .rojo {
+            background: rgba(255, 0, 0, 0.63);
+            position: relative;
+            z-index: -4;
+        }
+        
+        .verde {
+            background: rgba(0, 255, 13, 0.733);
+            position: relative;
+            left: 7em;
+            top: -5em;
+            z-index: -3;
+        }
+        
+        .amarillo {
+            background: rgba(255, 238, 0, 0.644);
+            position: relative;
+            left: 3.5em;
+            top: -6em;
+            /*z-index: -5;*/
+        }
+        
+        .celeste {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 238, 255, 0.733);
+            position: relative;
+            left: 4em;
+            top: -14.5em;
+            z-index: -2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="container-fluid">
+        <article class="row ">
+            <div style="position: absolute;" class="col-12 border border-2 border-dark">
+                <div class="caja azul ">1
+                    <div class="caja-min rojo">2</div>
+                </div>
+                <div class="caja rojo">2
+                    <div class="caja-min rojo">2</div>
+                </div>
+                <div class="caja verde">3</div>
+                <div class="caja amarillo">4</div>
+                <div class="caja celeste">5
+
+                </div>
+
+            </div>
+        </article>
+        <br>
+        <hr>
+        <article class="row " style="margin-top: 23em;">
+            <article class="col-12 d-flex justify-content-evenly " id="imgs">
+                <div class="caja cajaAzul"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
+            </article>
+            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="cambiarAdelante()">siguiente</button> </article>
+            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="cambiarAtras()">cambiarAtras</button> </article>
+            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="AtrasBTN()">AtrasBTN</button> </article>
+
+        </article>
+        <article class="row"></article>
+        <article class="row"></article>
+        <article class="row"></article>
+
+
+    </section>
+
+    <script>
+        function AtrasBTN() {
+
+        }
+
+        function detectar() {
+            let NodeParent = document.querySelector('#imgs').children
+            let siguiente
+            for (let i in NodeParent) {
+                console.log(`nodo: ${NodeParent[i]}`, `item: ${(parseInt(i) + 1)}`)
+                if (NodeParent[i].classList.contains('cajaAzul')) {
+                    console.log('-- ok ---', (parseInt(i) + 1))
+                    NodeParent[i].classList.replace('cajaAzul', 'cajaVerde')
+                    if (parseInt(i) > (NodeParent.length - 2)) {
+                        console.log('llego al final')
+                        siguiente = NodeParent[(0)].classList.replace('cajaVerde', 'cajaAzul')
+                    } else {
+                        siguiente = NodeParent[(parseInt(i) + 1)].classList.add('cajaAzul')
+                        siguiente = NodeParent[(parseInt(i) + 1)].classList.replace('cajaVerde', 'cajaAzul')
+                    }
+
+                    break;
+                    //    console.log('......')
+                }
+            }
+        }
+
+        function cambiarAtras() {
+            let parent = document.querySelector('#imgs').children
+            let arrayObj = []
+            for (let i of parent) {
+                arrayObj.push(i)
+            }
+            let invertido = arrayObj.reverse();
+            //console.log(invertido)
+            this.detectar(invertido)
+        }
+
+        function cambiarAdelante() {
+            let parent = document.querySelector('#imgs').children
+                //let nodoActivo = this.detectar()
+                //nodoActivo.classList.replace('cajaAzul', 'vacio')
+            var siguiente
+                //console.log(nodoActivo)
+            var i
+            for (i = 0; i < parent.length; i++) {
+                console.log(i)
+                if (parent[i].classList.item(1) == 'cajaAzul') {
+                    console.log('-- ok ---', i + 1)
+                    parent[i].classList.replace('cajaAzul', 'cajaVerde')
+                    if ((i) > (parent.length - 2)) {
+                        console.log('llego al final')
+                        siguiente = parent[(0)].classList.replace('cajaVerde', 'cajaAzul')
+                    } else {
+                        siguiente = parent[(i + 1)].classList.add('cajaAzul')
+                        siguiente = parent[(i + 1)].classList.replace('cajaVerde', 'cajaAzul')
+                    }
+
+                    break;
+                    console.log('......')
+                }
+
+
+            }
+            console.log('fin')
+        }
+    </script>
+</body>
+
+</html>
