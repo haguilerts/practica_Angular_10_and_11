@@ -39,7 +39,7 @@
         }
         
         .cajaVerde {
-            background: rgba(72, 255, 0, 0.904);
+            /* background: rgba(72, 255, 0, 0.904);*/
         }
         
         .azul {
@@ -81,6 +81,10 @@
             top: -14.5em;
             z-index: -2;
         }
+        
+        div {
+            color: black !important;
+        }
     </style>
 </head>
 
@@ -107,17 +111,18 @@
         <hr>
         <article class="row " style="margin-top: 23em;">
             <article class="col-12 d-flex justify-content-evenly " id="imgs">
-                <div class="caja cajaAzul"></div>
-                <div class="caja"></div>
-                <div class="caja"></div>
-                <div class="caja"></div>
-                <div class="caja"></div>
-                <div class="caja"></div>
-                <div class="caja"></div>
+                <div class="caja">0</div>
+                <div class="caja">1</div>
+                <div class="caja">2</div>
+                <div class="caja cajaAzul">3</div>
+                <div class="caja">4</div>
+                <div class="caja">5</div>
+                <div class="caja">6</div>
             </article>
-            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="cambiarAdelante()">siguiente</button> </article>
-            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="cambiarAtras()">cambiarAtras</button> </article>
-            <article> <button class="btn btn-outline-primary mx-5 mt-2" onclick="AtrasBTN()">AtrasBTN</button> </article>
+            <div class="d-flex justify-content-center my-5">
+                <article> <button class="btn btn-outline-primary mx-2 mt-2" onclick="carrucel.cambiarAtras()">cambiarAtras</button> </article>
+                <article> <button class="btn btn-outline-primary mx-2 mt-2" onclick="carrucel.cambiarAdelante()">siguiente</button> </article>
+            </div>
 
         </article>
         <article class="row"></article>
@@ -128,9 +133,132 @@
     </section>
 
     <script>
-        function AtrasBTN() {
+        class Carrucel {
+            posActual;
+            posInicial;
+            longitudMax;
+            posSiguiente
+            id = 'imgs'
+            objs = document.getElementById(this.id).children
+            constructor(idPadre) {
+                this.id = idPadre
+                this.posActual = 0;
+                this.posInicial = 0;
+                this.posSiguiente = 0;
+                //this.objs = document.getElementById(`${idPadre}`).children
+                this.longitudMax = this.objs.length
+                this.inicializandoDatos()
+            }
+            inicializandoDatos() {
+                //let hijos = document.querySelector(`#${id}`).children
+                for (let j = 0; j < this.longitudMax; j++) {
+                    if (this.objs[j].classList.contains('cajaAzul')) {
+                        this.posInicial = j
+                        this.posActual = j
+                    }
+                }
+                //console.log(this.posInicial, this.objs)
+                console.log("Azul: " + this.posActual)
+            }
+            mostrar_Posicion_Actual() {
+                console.log(this.posActual)
+            }
+            cambiarAdelante() {
+
+                //console.log("posiActual: " + this.posActual)
+                //let parent = document.querySelector('#imgs').children
+                //let nodoActivo = this.detectar()
+                //nodoActivo.classList.replace('cajaAzul', 'vacio')
+                //var siguiente
+                //console.log(nodoActivo)
+
+                for (let i = this.posActual; i < this.longitudMax; i++) {
+
+                    //console.log("Azul: " + this.posActual)
+                    //console.log(this.longitudMax)
+                    if (parseInt(i + 1) == this.longitudMax) {
+                        // console.log('ok ---', i)
+                        //console.log(" fin: " + i)
+                        this.posActual = 0
+                        this.posSiguiente = this.objs[(0)].classList.add('cajaAzul'); //1
+                        this.posSiguiente = this.objs[(i)].classList.replace('cajaAzul', 'cajaVerde');
+                        if ((this.objs[0].classList.item(1) === 'cajaVerde')) {
+                            // console.log('siiiiii')
+                            this.posSiguiente = this.objs[(0)].classList.replace('cajaVerde', 'cajaAzul');
+                        }
+                        //console.log("Azul: " + this.posActual)
+                        break;
+                    } else if (this.objs[i].classList.contains('cajaAzul')) {
+                        this.posActual = parseInt(i + 1)
+                            //console.log('-- [i] ---', i)
+                            //console.log("Azul[i]: " + parseInt(i - 1))
+                        if (this.objs[(i + 1)].classList.item(1) === 'cajaVerde') {
+                            //console.log('if_1 verde')
+                            this.posSiguiente = this.objs[(i + 1)].classList.replace('cajaVerde', 'cajaAzul')
+                                //this.posSiguiente = this.objs[(i - 1)].classList.add('cajaAzul')
+                        } else {
+                            //console.log('if_1 NOOverde')
+                            this.posSiguiente = this.objs[(i + 1)].classList.add('cajaAzul')
+                        }
+                        this.objs[i].classList.replace('cajaAzul', 'cajaVerde')
+                            //this.posSiguiente = this.objs[(i - 1)].classList.replace('cajaVerde', 'cajaAzul')
+                        break;
+                    }
+
+
+
+                }
+                this.mostrar_Posicion_Actual()
+            }
+            cambiarAtras() {
+
+                for (let i = this.posActual; i < this.longitudMax; i--) {
+                    //console.log("inicio: " + this.posInicial, " ,sig: " + this.posSiguiente, " ,Actual: " + this.posActual)
+                    this.posActual = parseInt(i - 1)
+                    if (this.posActual == -1) {
+                        this.posActual = 6
+                    }
+                    //console.log("Azul[i]: " + parseInt(i - 1))
+
+                    //console.log("Azul: " + this.posActual)
+
+                    if (i == 0) {
+                        // console.log(" ,[i-0]: " + i)
+                        this.posInicial = this.longitudMax - 1
+                        this.posSiguiente = this.objs[(i)].classList.replace('cajaAzul', 'cajaVerde')
+                        this.posSiguiente = this.objs[(this.longitudMax - 1)].classList.add('cajaAzul')
+                        if (this.objs[i].classList.item(1) === 'cajaVerde') {
+                            //console.log('if_1 verde')
+                            this.posSiguiente = this.objs[(this.longitudMax - 1)].classList.replace('cajaVerde', 'cajaAzul')
+                        }
+                        break;
+                    } else if (this.objs[i].classList.contains('cajaAzul')) {
+                        //console.log('-- ok ---', i)
+                        //console.log("Azul[i]: " + parseInt(i - 1))
+                        if (this.objs[(i - 1)].classList.item(1) === 'cajaVerde') {
+                            //console.log('if_1 verde')
+                            this.posSiguiente = this.objs[(i - 1)].classList.replace('cajaVerde', 'cajaAzul')
+                                //this.posSiguiente = this.objs[(i - 1)].classList.add('cajaAzul')
+                        } else {
+                            //console.log('if_1 NOOverde')
+                            this.posSiguiente = this.objs[(i - 1)].classList.add('cajaAzul')
+                        }
+                        this.objs[i].classList.replace('cajaAzul', 'cajaVerde')
+                            //this.posSiguiente = this.objs[(i - 1)].classList.replace('cajaVerde', 'cajaAzul')
+                        break;
+                    }
+
+
+                }
+                this.mostrar_Posicion_Actual()
+            }
+
 
         }
+
+        var carrucel = new Carrucel('imgs')
+
+        var actual
 
         function detectar() {
             let NodeParent = document.querySelector('#imgs').children
@@ -155,14 +283,43 @@
         }
 
         function cambiarAtras() {
-            let parent = document.querySelector('#imgs').children
-            let arrayObj = []
-            for (let i of parent) {
-                arrayObj.push(i)
+            let hijos = document.querySelector('#imgs').children
+            actual
+            console.log(typeof hijos)
+            for (let j = 0; j < hijos.length; j++) {
+                console.log(hijos[j])
+                if (hijos[j].classList.contains('cajaAzul')) {
+                    console.log('ok')
+                    actual = j
+                }
+
             }
-            let invertido = arrayObj.reverse();
-            //console.log(invertido)
-            this.detectar(invertido)
+            console.log(`actual: ${ actual}`)
+                // let invertido = arrayObj.reverse();
+                //console.log(invertido)
+            for (i = actual; i < hijos.length; i--) {
+                console.log(i)
+                if (i == 0) {
+                    actual = 3
+                    console.log('estas en cero', actual)
+                    siguiente = hijos[(0)].classList.replace('cajaAzul', 'cajaVerde')
+                    siguiente = hijos[(hijos.length - 1)].classList.add('cajaAzul')
+                } else if (hijos[i].classList.contains('cajaAzul')) {
+                    console.log('-- ok ---', i)
+                    hijos[i].classList.replace('cajaAzul', 'cajaVerde')
+                        //if ((i) < (hijos.length - 2)) {
+                        // console.log('llego al final')
+                        //siguiente = hijos[(0)].classList.replace('cajaAzul', 'cajaVerde')
+                        //} else {
+                    siguiente = hijos[(i - 1)].classList.add('cajaAzul')
+                    siguiente = hijos[(i - 1)].classList.replace('cajaVerde', 'cajaAzul')
+                        //}
+                    break;
+                    console.log('......')
+                }
+
+
+            }
         }
 
         function cambiarAdelante() {
@@ -177,9 +334,11 @@
                 if (parent[i].classList.item(1) == 'cajaAzul') {
                     console.log('-- ok ---', i + 1)
                     parent[i].classList.replace('cajaAzul', 'cajaVerde')
-                    if ((i) > (parent.length - 2)) {
+                    if ((i + 1) == (parent.length - 1)) {
                         console.log('llego al final')
+                        siguiente = parent[(0)].classList.add('cajaAzul')
                         siguiente = parent[(0)].classList.replace('cajaVerde', 'cajaAzul')
+                        siguiente = parent[(i + 1)].classList.add('cajaAzul')
                     } else {
                         siguiente = parent[(i + 1)].classList.add('cajaAzul')
                         siguiente = parent[(i + 1)].classList.replace('cajaVerde', 'cajaAzul')

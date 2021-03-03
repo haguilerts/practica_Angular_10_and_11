@@ -63,5 +63,52 @@
 <body>
     <div class="bg caja"></div>
 </body>
+<script>
+    let tiempo = new Date()
+    let num = [1, 4, 7, 2, 5, 8, 3, 6, 9]
+    let abc = ['A', 'a', 'b', 'B', 'c', 'd']
+    let arryDesor = ['Gio', 'giovanny', 25, true, 2.2222, '*', 'GIOVANNY'];
+    let frutas = ["Manzana", "Banana", "pera", "uva", "tomate", "choclo", "Banana"]
+
+    let numero = {
+        uno: 1,
+        dos: 2,
+        tre: 3,
+        falso: false,
+        'nombre': 'gio',
+        myfruta: frutas
+
+    }
+    console.log(frutas.length)
+    console.log(frutas[0])
+    console.log(frutas[frutas.length - 1])
+    console.log(frutas.indexOf('Banana'))
+    console.log(frutas.lastIndexOf('Banana'))
+    console.log(frutas.join('/'))
+    console.log(frutas.slice(1))
+    console.log(Array.from(`${numero}`).concat(frutas))
+    console.log("Asc sort: " + arryDesor.sort())
+    console.log("Des sort: " + arryDesor.sort((a, b) => b - a))
+    console.log("forEach: " + abc.forEach((n, i) => console.log(`[${i}]:${n}`)))
+    console.log("some: " + frutas.some(ok => (ok === 'uva') ? (true) : (false)))
+    console.log("map: " + frutas.map(arry => arry))
+    console.log("filter: " + num.filter(arry => arry > 5))
+    console.log("reduce (suma) : " + num.reduce((a, b) => a + b))
+    console.log("reduce (suma) : " + num.reduce((a, b) => a < b))
+    console.log(frutas.entries().next().value)
+    console.log("every: " + num.every(a => a <= 9))
+    console.log()
+    console.log(arryDesor)
+    console.log(numero)
+    console.log(frutas)
+        /*  for (let i in numero) {
+             console.log(`${i}:${numero[i]}\n`)
+
+         }
+         for (const j of frutas) {
+             //console.log(`obj= ${j}:${frutas[i]}\n`)
+             console.log(`[${j}]`)
+         } */
+</script>
 
 </html>
