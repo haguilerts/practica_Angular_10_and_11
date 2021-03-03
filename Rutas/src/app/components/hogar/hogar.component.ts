@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Carrucel } from './carrucel';
 
 @Component({
   selector: 'app-hogar',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hogar.component.scss']
 })
 export class HogarComponent implements OnInit {
-
-  constructor() { }
+  idCarrucel:string
+  //carrucel:Carrucel;
+  constructor() { 
+    this.idCarrucel='idCarrucel'
+    //this.carrucel=new Carrucel(this.idCarrucel)
+  }
 
   ngOnInit(): void {
   }
-
+  irAtras(){
+    //this.carrucel.cambiarAtras()
+  }
+  irAdelante(){ 
+    //this.carrucel.cambiarAdelante()
+  }
 }
