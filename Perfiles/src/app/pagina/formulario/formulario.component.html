@@ -1,0 +1,83 @@
+<!--  formularioRegistro es un obj donde gurdare los datos 
+    ngModel y name : masrco su valor del input y con el evento ngSubmit envio al TS.
+    -->
+<article class="container-fluid col-12 row">
+
+    <section class="col-4 d-flex flex-column border border-3">
+        <h2 class="text-center text-danger">Login</h2>
+        <form #login='ngForm' (ngSubmit)='onSubmit(login.value)'>
+
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="form-group col w-75">
+                    <label for="pas1">Password</label>
+                    <input type="password" class="form-control" id="pas1" name="pas" ngModel>
+                </div>
+                <div class="form-group col w-75">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" ngModel>
+                    <small class="form-text text-muted">ingrese su Email</small>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <button type="submit" class="btn btn-outline-primary w-50">Enviar</button>
+            </div>
+        </form>
+        {{login.value | json}}
+    </section>
+
+
+
+
+    <section class=" col-8 d-flex flex-column justify-content-start border border-3">
+        <h2 class="text-center text-danger">Formulario</h2>
+        <form [formGroup]="myformulario" (ngSubmit)="onFormulario()">
+
+            <div class="row">
+                <div class="form-group col">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" placeholder="ingrese su nombre" formControlName="nombre">
+                </div>
+                <div class="form-group col">
+                    <label for="ape">Apellido</label>
+                    <input type="text" class="form-control" id="ape" placeholder="ingrese su apellido" formControlName="apellido">
+                </div>
+                <div class="form-group col">
+                    <label for="edad">edad</label>
+                    <input type="number" class="form-control" id="edad" placeholder="ingrese su Edad" formControlName="edad">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="dni">DNI</label>
+                    <input type="text" class="form-control" id="dni" placeholder="ingrese su dni" formControlName="dni">
+                </div>
+                <div class="form-group col">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <small class="form-text text-muted">ingrese su Email</small>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label for="pas1">Password</label>
+                    <input type="password" class="form-control" id="pas1" formControlName="pas">
+                </div>
+                <div class="form-group col">
+                    <label for="pas2">Repita Password</label>
+                    <input type="password" class="form-control" id="pas2" formControlName="repit_pas">
+                </div>
+            </div>
+
+            <div class="form-group form-check d-flex justify-content-center">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="acepto">
+                <label class="form-check-label" for="exampleCheck1">Acepta los terminos!!</label>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <button type="submit" class="btn btn-outline-danger w-50">Enviar</button>
+            </div>
+        </form>
+        {{myformulario.value | json}}
+    </section>
+</article>

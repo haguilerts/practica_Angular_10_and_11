@@ -4,6 +4,7 @@ import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-p
 import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.component';
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
 import { MenuComponent } from './menu/menu.component';
+import { FormularioComponent } from './pagina/formulario/formulario.component';
 
 const routes: Routes = [
   {path:'', pathMatch:'full',redirectTo:'/perfil'},
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path:'musicas',component:SubDetalPerfilComponent},
     {path:'trofeos',component:SubDetalPerfilComponent},
   ]},
+  {path:'registro', component: FormularioComponent},
   {path:'**', redirectTo:'/perfil'},
 
 ];

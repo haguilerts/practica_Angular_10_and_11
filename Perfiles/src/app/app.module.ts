@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,8 @@ import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.
 import { HomeComponent } from './home/home.component';
 import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-perfil.component';
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
+import { FormularioComponent } from './pagina/formulario/formulario.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,15 @@ import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal
     MostraPerfilComponent,
     HomeComponent,
     DetallesPerfilComponent,
-    SubDetalPerfilComponent
+    SubDetalPerfilComponent,
+    FormularioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
     <nav class="row navbar-dark bg-dark" style="background-color: #01070c;">
         <ul class="nav nav-pills d-flex justify-content-md-end">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" (click)='irPagina("perfil")'>Home</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle btn-outline-danger" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">List Product</a>
@@ -17,7 +17,10 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="#">Productos</a>
+                <a class="nav-link btn-outline-primary" href="">Productos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" tabindex="-1" aria-disabled="true" (click)='irPagina("registro")' style="cursor: pointer;">Formulario</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Pagos</a>
