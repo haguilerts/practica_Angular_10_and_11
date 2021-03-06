@@ -11,6 +11,8 @@ import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-p
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
 import { FormularioComponent } from './pagina/formulario/formulario.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
+import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LoginComponent } from './components/login/login.component';
     DetallesPerfilComponent,
     SubDetalPerfilComponent,
     FormularioComponent,
-    LoginComponent
+    LoginComponent,
+    FormularioEmpleadoComponent,
+    ListaEmpleadoComponent
   ],
   imports: [
     BrowserModule,

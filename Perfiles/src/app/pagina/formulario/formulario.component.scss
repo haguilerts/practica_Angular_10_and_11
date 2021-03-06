@@ -1,0 +1,50 @@
+    input {
+        background: rgb(202, 190, 218);
+    }
+    
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+    
+    //--------------------- validador en cuanto escriba ----------------------------
+    input.ng-valid,
+    strong.ng-valid {
+        border: 1px solid rgba(165, 214, 167, 0.781);
+        background: rgb(102, 228, 129);
+    }
+    
+    input.ng-invalid,
+    strong.ng-invalid {
+        border: 5px solid red;
+        color: red;
+    }
+    
+    //-------------------------- validaror en cuando se escriba la primera ves o trae el valor por defecto-----------------------
+    input.ng-dirty,
+    strong.ng-dirty {
+        color: blue;
+        font-family: monospace;
+    }
+    
+    input.ng-pristine,
+    strong.ng-pristine {
+        color: rgb(112, 112, 112);
+        font-weight: bold;
+        font-size: larger;
+        font-family: cursive;
+    }
+    
+    //-------------------------------------------------
+    input.ng-touched,
+    strong.ng-touched {
+        box-shadow: 2px 3px 10px 5px rgba(243, 0, 0, 0.651);
+    }
+    
+    input.ng-untouched,
+    strong.ng-untouched {
+        box-shadow: 2px 3px 10px 5px rgba(0, 243, 223, 0.651);
+    }
+    
+    //-------------------------------------------------
+    //-------------------------------------------------

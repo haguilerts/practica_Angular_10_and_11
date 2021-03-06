@@ -37,26 +37,57 @@
                 <div class="form-group col">
                     <label for="name">Nombre</label>
                     <input type="text" class="form-control" id="name" placeholder="ingrese su nombre" formControlName="nombre">
+                    <small class="form-text text-muted" *ngIf="!myformulario.valid">min:3 | mas: 5</small>
+
                 </div>
                 <div class="form-group col">
                     <label for="ape">Apellido</label>
                     <input type="text" class="form-control" id="ape" placeholder="ingrese su apellido" formControlName="apellido">
+                    <div class="d-flex flex-column " style="height: 5em;">
+                        <small class="form-text text-muted">valid: {{myformulario.controls.apellido.valid }}</small>
+                        <small class="form-text text-muted error" *ngIf="myformulario.controls.apellido.errors?.maxlength && myformulario.controls.apellido.touched"> 
+                            apellido no puede tener mas de {{myformulario.controls.apellido.errors?.maxlength.requiredLength}} caracteres
+                        </small> {{myformulario.controls.value}}
+
+                    </div>
                 </div>
                 <div class="form-group col">
-                    <label for="edad">edad</label>
-                    <input type="number" class="form-control" id="edad" placeholder="ingrese su Edad" formControlName="edad">
+                    <label for="edad">Edad</label>
+                    <input type="text" class="form-control" id="edad" placeholder="ingrese su Edad" formControlName="edad">
+                    <div class="d-flex flex-column " style="height: 5em;">
+                        <small class="form-text text-muted" *ngIf="!myformulario.valid">[0-18 ]</small>
+                        <small class="form-text text-muted error" *ngIf="myformulario.controls.edad.errors?.edadValidador && myformulario.controls.edad"> 
+                            apellido no puede tener mas de 
+                            {{myformulario.controls.edad.errors?.edadValidador.min }} - {{myformulario.controls.edad.errors?.edadValidador.max }} 
+                            caracteres
+                        </small>
+                        <p *ngIf="myformulario.controls.edad.errors">error: {{myformulario.controls.edad.errors?.edadValidado | json}} </p>
+                    </div>
                 </div>
             </div>
             <div class="row">
+                <fieldset class="form-group col-2" disabled>
+                    <label for="id">ID</label>
+                    <input type="number" class="form-control" id="id" formControlName="id">
+                </fieldset>
                 <div class="form-group col">
-                    <label for="dni">DNI</label>
-                    <input type="text" class="form-control" id="dni" placeholder="ingrese su dni" formControlName="dni">
+                    <label for="dni">Cuil</label>
+                    <input type="text" class="form-control" id="dni" placeholder="99-99990000-9" formControlName="dni">
+                    <div class="d-flex flex-column">
+                        <small class="form-text text-muted error" *ngIf="myformulario.controls.dni.errors?.minlength && myformulario.controls.dni.touched"> falta {{myformulario.controls.dni.errors?.minlength.requiredLength}} caracteres</small>
+                        <small class="form-text text-muted error" *ngIf="myformulario.controls.dni.errors?.required && myformulario.controls.dni.touched">
+                        cuil Obligatorio!! 
+                    </small>
+                    </div>
+                    <!--  {{myformulario.controls.dni.errors | json}} -->
                 </div>
+
                 <div class="form-group col">
-                    <label for="email">Email</label>
+                    <label for="email ">Email</label>
                     <input type="email" class="form-control" id="email" formControlName="email">
-                    <small class="form-text text-muted">ingrese su Email</small>
+                    <small class="form-text text-muted" *ngIf="!myformulario.valid">...@abc.as</small>
                 </div>
+
             </div>
 
             <div class="row">
@@ -72,12 +103,30 @@
 
             <div class="form-group form-check d-flex justify-content-center">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="acepto">
-                <label class="form-check-label" for="exampleCheck1">Acepta los terminos!!</label>
+                <label class="form-check-label" for="exampleCheck1" *ngIf="myformulario.valid">Acepta los terminos!!</label>
             </div>
             <div class="row d-flex justify-content-center">
-                <button type="submit" class="btn btn-outline-danger w-50">Enviar</button>
+                <button type="submit" class="btn btn-danger w-50" [disabled]="!myformulario.valid">Enviar</button>
             </div>
         </form>
         {{myformulario.value | json}}
+        <h3 class="text-center text-primary border border-bottom-5"> se le aplica "Cambio" | trae por "Defecto"</h3>
+        <div class="d-flex justify-content-lg-between">
+            <p>valid:
+                <strong class="ng-valid">{{myformulario.valid}}</strong> | invalid: <strong class="ng-invalid">{{myformulario.invalid}}</strong>
+            </p>
+            <p>---- dirty:
+                <strong class="ng-dirty">{{myformulario.dirty}}</strong> | pristine: <strong class="ng-pristine">{{myformulario.pristine}}</strong>
+            </p>
+
+            <p>---- touched:
+                <strong class="ng-touched">{{myformulario.touched}}</strong>|untouched
+                <strong class="ng-untouched">{{myformulario.untouched}}</strong>
+
+
+            </p>
+
+        </div>
     </section>
+
 </article>

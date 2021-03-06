@@ -1,0 +1,14 @@
+.img {
+    background-image: url('../../../../assets/img/imgFondo.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.container {
+    padding: 1em;
+}

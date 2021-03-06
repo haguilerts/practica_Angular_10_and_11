@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-perfil.component';
+import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
+import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
 import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.component';
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
 import { MenuComponent } from './menu/menu.component';
@@ -14,6 +16,8 @@ const routes: Routes = [
     {path:'musicas',component:SubDetalPerfilComponent},
     {path:'trofeos',component:SubDetalPerfilComponent},
   ]},
+  {path:'formEmpleado', component: FormularioEmpleadoComponent},
+  {path:'listEmpleado', component: ListaEmpleadoComponent},
   {path:'registro', component: FormularioComponent},
   {path:'**', redirectTo:'/perfil'},
 
