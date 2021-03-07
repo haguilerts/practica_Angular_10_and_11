@@ -2,8 +2,11 @@ export class Empleado {
     nombre: string;
     apellido:string;
     edad:number;
-    departamento:string;
+    sexo:boolean;
+    email:string;
     pas:string;
+    departamento:string;
+    cuil:string
     img:string;
     
 }
