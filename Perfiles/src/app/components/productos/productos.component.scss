@@ -1,0 +1,15 @@
+section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    article {
+        width: 18em;
+        min-width: 10em;
+        background: rgb(55, 54, 54);
+    }
+}
+
+img {
+    width: 5em;
+}

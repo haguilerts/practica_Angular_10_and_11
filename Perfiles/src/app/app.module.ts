@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FormularioComponent } from './pagina/formulario/formulario.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
 import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,15 @@ import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lis
     FormularioComponent,
     LoginComponent,
     FormularioEmpleadoComponent,
-    ListaEmpleadoComponent
+    ListaEmpleadoComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,13 +35,30 @@ export class FormularioEmpleadoComponent implements OnInit {
     console.log(this.formNewEmpleado.value)
   }
   validarName(a:any){
-    console.log(typeof a.value)
+    console.log(typeof a.value,typeof parseInt(a.value), parseInt(a.value))
+    let expNumber=new RegExp(/^[+]?\d*$/)
+    let texto=a.value
     let error=null
-   /*  if(typeof parseInt(a.value)=='number'){
+    console.log(texto.length)
+    console.log(expNumber)
+
+    for (let i=0; i<texto.length;i++){
+      //console.log('tex: ',texto[i]," string: ", typeof texto[i]," number: ", typeof parseInt(texto[i]) )
+
+      if(typeof texto[i]=== "string"){
+        console.log('es string')
+      }
+      if(typeof texto[i]=== "number"){
+        console.log('es numero')
+      }
+
+    }
+
+    if(typeof parseInt(a.value)===typeof Number){
       console.log('el valor es una numero',parseInt(a.value))
       error = {  dollar: 'no ingresar un numero' };
       return error
-    } */
+    }
     if( a.value.length >5){
       console.log('el valor es una string',a.value)
       error = {  dollar: 'no ingresar  mas de 5 digitos' };

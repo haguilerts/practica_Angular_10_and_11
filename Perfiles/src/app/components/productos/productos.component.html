@@ -1,0 +1,22 @@
+<p>productos works!</p>
+<button (click)='postId()'>insertar</button>
+<section>
+    <article class="col-4 p-2 mb-4" *ngFor="let item of arrayPost; let i=index;">
+        <h5 class="text-center text-primary">{{item.id}}</h5>
+        <!-- *ngFor="let item of arrayPost; let i=index;" / [src]="item.url" -->
+        <div class="card text-white" style="min-width: 10em;max-width: auto; background: rgb(121, 93, 245);">
+            <img [src]="item.thumbnailUrl" alt="img" class="text-center">
+            <div class="card-header ">
+                <h5 class="card-title d-inline">{{item.name}}</h5>
+                <p class="card-title d-inline">{{item.email}}</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{item.body}}</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <button class="btn btn-danger" (click)="clickId( item.id)"> Ver Perfil <i class="bi bi-cart-plus-fill"></i></button>
+            </div>
+        </div>
+
+    </article>
+</section>
