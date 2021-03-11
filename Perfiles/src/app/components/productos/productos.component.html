@@ -1,5 +1,7 @@
 <p>productos works!</p>
+<button (click)='update()'>Actualizar</button>
 <button (click)='postId()'>insertar</button>
+<button (click)='borrar()'>Borrar</button>
 <section>
     <article class="col-4 p-2 mb-4" *ngFor="let item of arrayPost; let i=index;">
         <h5 class="text-center text-primary">{{item.id}}</h5>
@@ -19,4 +21,9 @@
         </div>
 
     </article>
+</section>
+<section>
+    <form>
+        <input type="text">
+    </form>
 </section>

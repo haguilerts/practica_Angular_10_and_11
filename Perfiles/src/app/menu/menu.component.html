@@ -5,11 +5,13 @@
                 <a class="nav-link active" aria-current="page" (click)='irPagina("perfil")'>Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle btn-outline-danger" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Listas ..</a>
+                <a class="nav-link dropdown-toggle btn-outline-danger" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ApiRest ..</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item btn-outline-danger" (click)='irPagina("formEmpleado")'>Formulario Empleado</a></li>
                     <li><a class="dropdown-item btn-outline-danger" (click)='irPagina("listEmpleado")'>Lista Empleado</a></li>
-                    <li><a class="dropdown-item btn-outline-danger" href="#">lista 3</a></li>
+                    <li><a class="dropdown-item btn-outline-danger" (click)='irPagina("banderas")'>Banderas</a></li>
+                    <li><a class="dropdown-item btn-outline-danger" (click)='irPagina("personajes")'>Personajes</a></li>
+
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -17,7 +19,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link btn-outline-primary" href="">Productos</a>
+                <a class="nav-link btn-outline-primary" (click)='irPagina("productos")'>Productos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" tabindex="-1" aria-disabled="true" (click)='irPagina("registro")' style="cursor: pointer;">Formulario</a>

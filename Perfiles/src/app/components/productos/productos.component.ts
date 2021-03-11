@@ -41,4 +41,31 @@ export class ProductosComponent implements OnInit {
     .catch(error=>console.log(error))
    
   }
+  postForm(){
+    objFormulario:{usu:'agui'}
+    try {
+  
+      //const resp = await this.posService.postForm(this.formulario.value);
+    } catch (error) {
+      
+    }
+  }
+  update(){
+    this.posService.update({
+      id:5,
+      name:'gio',
+      email:'gio@gmail.com',
+      username:'haguilerts'
+    }).then(res=>console.log(res))
+    .catch(error=>console.log(error))
+  }
+  async borrar(){
+    try {
+      const borrar= await this.posService.delete(1)
+      console.log(borrar)
+    } catch (error) {
+      console.log(error)
+    }
+   
+  }
 }

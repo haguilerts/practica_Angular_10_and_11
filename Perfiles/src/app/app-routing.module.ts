@@ -4,6 +4,7 @@ import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-p
 import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
 import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
 import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.component';
+import { PersonajesComponent } from './components/personajes/personajes.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
 import { MenuComponent } from './menu/menu.component';
@@ -18,11 +19,12 @@ const routes: Routes = [
     {path:'trofeos',component:SubDetalPerfilComponent},
   ]},
   {path:'formEmpleado', component: FormularioEmpleadoComponent},
+  {path:'personajes', component: PersonajesComponent},
   {path:'listEmpleado', component: ListaEmpleadoComponent},
   {path:'registro', component: FormularioComponent},
   {path:'productos', component: ProductosComponent},
   {path:'**', redirectTo:'/perfil'},
-
+  
 ];
 
 @NgModule({
