@@ -36,6 +36,7 @@ export class PipesComponent implements OnInit {
 
   //localStorage
   //dato:Storage
+  num:any[]=[5]
   constructor(private http:HttpClient,private posService:PostService) { 
     this.precio=999.4528
     this.numero=3.144432342342342

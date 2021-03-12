@@ -98,5 +98,19 @@
                 </ul>
             </div>
         </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">Personalizado-Pipes</h4>
+            <p>texto: {{texto}}</p>
+            <p>reversoPipes: <strong>{{texto | reverso}}</strong> </p>
+            <p>CapitalicePipes: <strong>{{texto | capitalize}}</strong> </p>
+
+            <div>
+                <ul>
+                    <li *ngFor="let item of  ['cero','uno','dos','tres','cuatro','sinco','seis','siete','oscho','nueve']; let i=index; ">
+                        {{i | numToArr}} - {{item |numToArr}}
+                    </li>
+                </ul>
+            </div>
+        </div>
     </article>
 </section>

@@ -20,6 +20,9 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
 import { BanderasComponent } from './components/banderas/banderas.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { ReversoPipe } from './components/pipes/reverso.pipe';
+import { CapitalizePipe } from './components/pipes/capitalize.pipe';
+import { NumToArrPipe } from './components/pipes/num-to-arr.pipe';
 
 registerLocaleData(localeEs)
 
@@ -38,7 +41,10 @@ registerLocaleData(localeEs)
     ProductosComponent,
     PersonajesComponent,
     BanderasComponent,
-    PipesComponent
+    PipesComponent,
+    ReversoPipe,
+    CapitalizePipe,
+    NumToArrPipe
   ],
   imports: [
     BrowserModule,
