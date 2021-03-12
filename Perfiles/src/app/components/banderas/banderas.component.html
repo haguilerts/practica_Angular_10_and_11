@@ -1,0 +1,21 @@
+<p>banderas works!</p>
+
+
+<section class="d-flex justify-content-center align-items-center flex-wrap ">
+    <article class="card  mx-2 my-2 border border-1 border-dark" style="width: 15rem;" *ngFor="let items of arrayPaises; let i=index">
+        <img [src]="items.flag" alt="..." style="width: 100%;  height: 170px; min-height: 170px; ">
+        <div class="card-header text-center d-flex">
+            <small class="text-muted">.{{i}}</small>
+            <h5 class="ms-auto">{{items.capital}}</h5>
+        </div>
+        <div class="card-body ">
+            <h5 class="card-title ms-auto">{{items.translations['es']}} </h5>
+            <p>{{items.subregion}}</p>
+
+        </div>
+        <div class="card-footer text-muted d-flex p-1">
+            <small class="d-inline-block me-auto pe-2">moneda:  </small>
+            <a class="btn btn-primary ms-auto ">Ver Pais</a>
+        </div>
+    </article>
+</section>

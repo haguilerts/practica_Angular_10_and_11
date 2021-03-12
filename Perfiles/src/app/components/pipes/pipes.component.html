@@ -1,0 +1,102 @@
+<h3 class="text-center fw-bold fs-4">Pipes</h3>
+<section class="container-fluid">
+    <article class="row col-12">
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">currencyPipe</h4>
+            <p>Precio:{{precio}} / <br>
+                <strong>{{precio | currency}}</strong> -
+                <strong>{{precio | currency:'DOLAR'}} </strong> -
+                <strong>{{precio | currency:'ARG':'code' }} </strong> -
+                <strong>{{precio | currency:'EUR':'symbol' }} </strong> - <br>
+                <strong>{{precio | currency:'EUR':'symbol':'4.4-7' }} </strong> -
+                <!-- 4.4-7 : DeciCanMax.minNum-maxNum -->
+            </p>
+        </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">DecimalPipe</h4>
+            <p>numero:{{numero}} / <br>
+                <strong> {{numero | number}}</strong> - <br>
+                <strong>{{numero | number:'3.1-2' }} </strong> - <br>
+            </p>
+        </div>
+        <div class=" row col-12">
+            <h4 class="tittle">DatePipe</h4>
+            <div class="col-6 border border-darken-1 " style="line-height: normal;">
+
+                <p>fecha:{{fecha}} / <br> </p>
+                <p>Date: <strong> {{fecha | date}}</strong></p>
+                <p>short: <strong>: {{fecha | date:'short' }} </strong> </p>
+                <p>medium: <strong>: {{fecha | date:'medium' }} </strong> </p>
+                <p>long: <strong>{{fecha | date:'long' }} </strong> </p>
+                <p>full: <strong>{{fecha | date:'full' }} </strong> </p>
+                <p>shortTime: <strong>{{fecha | date:'shortTime' }} </strong> </p>
+                <p>mediumTime: <strong>: {{fecha | date:'mediumTime' }} </strong> </p>
+                <p>longTime: <strong>{{fecha | date:'longTime' }} </strong> </p>
+                <p>fullTime: <strong>{{fecha | date:'fullTime' }} </strong> </p>
+            </div>
+            <div class="col-6 border border-darken-1 " style="line-height: normal;">
+                <strong>{{fecha | date:'dd-MM-yyyy' }} </strong> - <br>
+                <strong>{{fecha | date:'dd-MMMM-yyyy' }} </strong> - <br>
+                <strong>{{fecha | date:'dd-LLLL-yyyy' }} </strong> - <br>
+                <p>Zone: <strong>{{fecha | date:'ZZZZ' }} _ {{fecha | date:'ZZZZZ' }} </strong> </p>
+
+                <p>seg: <strong>{{fecha | date:'s' }} _ {{fecha | date:'ss' }} _ {{fecha | date:'S' }} _ {{fecha | date:'SSS' }} _ </strong> </p>
+                <p>min: <strong>{{fecha | date:'m' }} _ {{fecha | date:'mm' }} </strong> </p>
+                <p>hora: <strong>{{fecha | date:'h' }} _ {{fecha | date:'hh' }} _ {{fecha | date:'H' }} _ {{fecha | date:'HH' }} </strong> </p>
+                <p>dia: <strong>{{fecha | date:'EEE' }} _ {{fecha | date:'EEEE' }} _ {{fecha | date:'EEEEE' }} </strong> </p>
+                <p>Mes: <strong>{{fecha | date:'MMM' }} _ {{fecha | date:'MMMM' }} _ {{fecha | date:'MMMMM' }} </strong> </p>
+                <p>Año: <strong>{{fecha | date:'Y' }} _ {{fecha | date:'YY' }} _ {{fecha | date:'YYYY' }} </strong> </p>
+
+            </div>
+        </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">PercentPipes</h4>
+            <p>numAleatorio:{{numAleatorio}} / <br>
+                <strong> {{numAleatorio | percent}}</strong> - <br>
+                <strong>{{numAleatorio | percent:'1.1-2' }} </strong> - <br>
+            </p>
+        </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">JsonPipes</h4>
+            <p>studiante:{{studiante}} / <br>
+                <strong> {{studiante | json}}</strong> - <br>
+
+            </p>
+        </div>
+        <div class="col-6 border border-darken-1" style="line-height: normal;">
+            <h4 class="tittle">lowercase / uppercase / titlecase</h4>
+            <p>texto: {{texto}} </p>
+            <p>lowercase: <strong> {{texto | lowercase}}</strong> </p>
+            <p>uppercase: <strong> {{texto | uppercase}}</strong></p>
+            <p>titlecase: <strong> {{texto | titlecase}}</strong></p>
+        </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">SlicePipe</h4>
+            <input type="range" min="0" [max]="animales.length-1" step="1" [(ngModel)]="minimo"> {{minimo}}
+            <p>animales:{{animales}} /</p>
+            <div>
+                <ul>
+                    <li *ngFor="let animal of animales | slice:minimo-animales.length let i=index;">.{{i}} -{{animal | slice:1-0}} / {{animal}}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-6 border border-darken-1">
+            <h4 class="tittle">AsyncPipe</h4>
+            <p>prom:{{prom}} / <br>
+                <strong> {{prom  | async}}</strong> - <br>
+            </p>
+            <p>promPost:{{promPost}} / <br>
+                <strong> {{promPost  | async }}</strong> - <br>
+                <!-- <strong> {{promPost  | async | json }}</strong> - <br> -->
+            </p>
+            <div>
+                <ul>
+                    <li *ngFor="let p of promPost | async;let i=index;">
+                        .{{i}} -{{p.email}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </article>
+</section>

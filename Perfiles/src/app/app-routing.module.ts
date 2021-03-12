@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BanderasComponent } from './components/banderas/banderas.component';
 import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-perfil.component';
 import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
 import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
 import { MostraPerfilComponent } from './components/mostra-perfil/mostra-perfil.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
+import { PipesComponent } from './components/pipes/pipes.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { SubDetalPerfilComponent } from './components/sub-detal-perfil/sub-detal-perfil.component';
 import { MenuComponent } from './menu/menu.component';
@@ -19,10 +21,13 @@ const routes: Routes = [
     {path:'trofeos',component:SubDetalPerfilComponent},
   ]},
   {path:'formEmpleado', component: FormularioEmpleadoComponent},
+  {path:'banderas', component: BanderasComponent},
   {path:'personajes', component: PersonajesComponent},
   {path:'listEmpleado', component: ListaEmpleadoComponent},
   {path:'registro', component: FormularioComponent},
   {path:'productos', component: ProductosComponent},
+  {path:'pipes', component: PipesComponent},
+
   {path:'**', redirectTo:'/perfil'},
   
 ];

@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import localeEs from '@angular/common/locales/es'
+import { registerLocaleData } from '@angular/common'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,10 @@ import { FormularioEmpleadoComponent } from './components/empleado/formulario-em
 import { ListaEmpleadoComponent } from './components/empleado/lista-empleado/lista-empleado.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PersonajesComponent } from './components/personajes/personajes.component';
+import { BanderasComponent } from './components/banderas/banderas.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+
+registerLocaleData(localeEs)
 
 @NgModule({
   declarations: [
@@ -30,7 +36,9 @@ import { PersonajesComponent } from './components/personajes/personajes.componen
     FormularioEmpleadoComponent,
     ListaEmpleadoComponent,
     ProductosComponent,
-    PersonajesComponent
+    PersonajesComponent,
+    BanderasComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,9 @@ import { PersonajesComponent } from './components/personajes/personajes.componen
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{
+    provide:LOCALE_ID,useValue:'es-ES'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
