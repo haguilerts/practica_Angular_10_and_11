@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AnimationComponent } from './components/animation/animation.component';
 import { BanderasComponent } from './components/banderas/banderas.component';
 import { DetallesPerfilComponent } from './components/detalles-perfil/detalles-perfil.component';
 import { FormularioEmpleadoComponent } from './components/empleado/formulario-empleado/formulario-empleado.component';
@@ -27,6 +28,8 @@ const routes: Routes = [
   {path:'registro', component: FormularioComponent},
   {path:'productos', component: ProductosComponent},
   {path:'pipes', component: PipesComponent},
+  {path:'animacion', component: AnimationComponent},
+
 
   {path:'**', redirectTo:'/perfil'},
   

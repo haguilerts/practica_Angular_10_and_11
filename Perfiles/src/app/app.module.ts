@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import localeEs from '@angular/common/locales/es'
 import { registerLocaleData } from '@angular/common'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { ReversoPipe } from './components/pipes/reverso.pipe';
 import { CapitalizePipe } from './components/pipes/capitalize.pipe';
 import { NumToArrPipe } from './components/pipes/num-to-arr.pipe';
+import { AnimationComponent } from './components/animation/animation.component';
 
 registerLocaleData(localeEs)
 
@@ -44,7 +46,8 @@ registerLocaleData(localeEs)
     PipesComponent,
     ReversoPipe,
     CapitalizePipe,
-    NumToArrPipe
+    NumToArrPipe,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ registerLocaleData(localeEs)
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [{
     provide:LOCALE_ID,useValue:'es-ES'
