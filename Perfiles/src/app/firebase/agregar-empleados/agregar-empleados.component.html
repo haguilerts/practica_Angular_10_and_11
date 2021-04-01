@@ -1,0 +1,51 @@
+<section class="container">
+    <article class="row justify-content-center">
+
+        <div class="formulario col-12 col-lx-8 col-lg-9 col-md-10 col-sm-12 py-3">
+            <form class="row" [formGroup]="form" (ngSubmit)="onclickEmpleado()">
+                <article class="col col-12 p-5" style="background-color: rgba(236, 253, 79, 0.768);">
+                    <h1 class="text-center">{{title}}
+                        <div *ngIf="login" class="spinner-border float-end" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </h1>
+                    <div class="row ">
+                        <div class=" col col-md-6 mb-3">
+                            <label for="nombre">Ingrese su nombre</label>
+                            <input type="text" class="form-control is-valid" id="nombre" required formControlName="name">
+                            <div class="valid-feedback"> mal ingresado la nombre! </div>
+                        </div>
+
+                        <div class=" col col-md-6 mb-3">
+                            <label for="apellido">Ingrese su Apellido</label>
+                            <input type="text" class="form-control is-valid" id="apellido" required formControlName="surname">
+                            <div class="valid-feedback"> mal ingresado la Apellido! </div>
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <div class="col mb-3">
+                            <label for="edad">Edad</label>
+                            <input type="text" class="form-control is-invalid" id="edad" required formControlName="age">
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                mal ingresado la edad
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex flex-row-reverse justify-content-center m-3">
+
+                        <div class="col form-group text-center p-2 ">
+                            <button type="submit" class="btn btn-outline-danger px-3 fs-4 fw-bold" [disabled]="!form.valid">{{enviar}} <i class="bi bi-box-arrow-up"></i></button>
+                        </div>
+                        <div *ngIf="!(enviar==='Guardar')" class="col form-group text-center p-2 ">
+                            <button class="btn btn-outline-primary px-3 fs-4 fw-bold" [routerLink]="'/listFirebase'"><i class="bi bi-arrow-bar-left"></i> mostrar</button>
+                        </div>
+                    </div>
+                </article>
+                <!-- ---------------------------------------------------------------------------------- -->
+            </form>
+
+        </div>
+    </article>
+</section>
+<!-- para mostrar el mesaje de q fue exitoso seguir los pasos de la pagina:
+https://www.npmjs.com/package/ngx-toastr -->

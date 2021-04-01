@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hola mundo</h1>
+    <script>
+        // aca ba los codigos de javaScrip
+        console.log('Bienvenido a JavaScript...')
+        eje() {
+            let palos = 'espada'
+            let lista = [] // lista vacia
+                //asi voy agregado 1 x 1 (clasica)
+            lista[0] = `1 de ${palos}`
+            lista[1] = `2 de ${palos}`
+            lista[2] = `3 de ${palos}`
+            lista[3] = `4 de ${palos}`
+            lista[4] = `5 de ${palos}`
+            lista[5] = "6 de " + palos; // esta es otra forma de concatenar 
+
+            // para ver la lista q agregue 1 x 1
+            console.log(lista[0])
+            console.log(lista.length) // lo q va mostar es su longitud q lleva la lista = 6 
+
+            //otra forma para ver todos usando si se su longitud maxima, en este caso 6
+            for (let i = 0; i < 6; i++) {
+                console.log(`posicion: ${i} - valor: ${lista[i]}`) // ['1 de espada', '2 de espada '... '6 de espada']
+            }
+            //otra forma para ver todos usando .length(solo se usa caundo uno no sabe la lontitd q trae)
+            for (let i = 0; i < lista.length; i++) {
+                console.log(`posicion: ${i} - valor: ${lista[i]}`)
+                    // ['1 de espada', '2 de espada '... '6 de espada']
+            }
+            // de la misma madera poder "reemplazar" usando el for en ves de mostra( ). 
+            for (let i = 0; i < lista.length; i++) {
+                // este modelo devemos ingresar "1 de espada"
+                //entoces i comeinza de 0 asta 5 q son sus posiciones de la lista
+                // y su contenido o valor va de 1 a 6
+                // a hora lo q voy hacer es poner 1 = i+1, donde i comeiza con 0
+                lista[i] = `${i+1} de ${palos}`; // aca lo q hago es remplazar 
+            }
+            // el .puch se utiliza par 'agregar' a la lista 
+            // por Ejemplo:  si tengo esta lista ['1 de espada', '2 de espada '... '6 de espada']
+            lista.push('7 de espada') // se agregara al final de la lista 
+                // eslo lo podemos usar cuando nuetra lista esta vacia. y agregamos 1 x 1 interando con el for
+            for (let i = 0; i < lista.length; i++) {
+                lista.push(`${i+1} de ${palos}`);
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>

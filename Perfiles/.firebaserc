@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "empleados-93ba2": {
+      "hosting": {
+        "Perfiles": [
+          "empleados-93ba2"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<!-- https://console.firebase.google.com/project/empleados-93ba2/settings/general/web:OTA2Njg3MDUtZDZhNi00ZTZlLTg5Y2MtZDE2MGRkMmM3MjIw -->
+<!--admin: https://console.firebase.google.com/project/empleados-93ba2/firestore/data~2Fitems~2FgqGNEXUzobdLxcvhuWzM -->
+<!-- pasos de configurar firebase: https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md -->
+<!-- animaciones: https://www.npmjs.com/package/ngx-toastr  -->
+<section class="container">
+    <span class="h3 text-center w-100">Lista de Empleado</span>
+    <article class="col d-flex justify-content-end pb-2">
+        <div class="icon btn btn-outline-danger" [routerLink]="['/addFirebase']"><i class="fas fa-user-plus"></i> Agregar</div>
+    </article>
+    <span *ngIf="elEmpleado.length == 0" class="h3 text-center w-100">no hay datos para mostar</span>
+
+    <table *ngIf="elEmpleado.length > 0" class="table table-striped  table-bordered table-hover">
+        <thead class="thead-dark table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">surname</th>
+                <th scope="col">age</th>
+                <th scope="col">option</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-active">
+            <tr *ngFor="let item of elEmpleado ;let i=index ">
+                <th scope="row">{{i}}</th>
+                <td>{{item.nombre}}</td>
+                <td>{{item.apellido}}</td>
+                <td>{{item.edad}}</td>
+                <td class="d-inline-flex w-100" style="font-size: 23px;">
+                    <div [routerLink]="['/editFirebase/',item.id]" class="editar w-50 " style="color:rgb(56, 255, 0);"><i class="fas fa-edit btn btn-outline-warning"></i></div>
+                    <div (click)="delEmpleado(item.id)" class="eliminar w-50" style="color:rgb(221, 24, 24);"> <i class="fas fa-trash-alt btn btn-outline-danger"></i></div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>

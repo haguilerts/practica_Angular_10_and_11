@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="array()">calcular</button>
+
+    <script>
+        function array() {
+            //[7, 19, 22, 36, 41, 42][12, 4, 40, 33, 13, 17];
+            //const numerosJugados = [1, 2, 3, 4, 5, 6];
+            //const numerosSorteados = [2, 4, 6, 8, 10, 12];
+            const numerosJugados = [1, 2, 3, 4, 5, 6];
+            const numerosSorteados = [6, 5, 4, 3, 2, 1];
+            let gurdado = []
+            for (let i = 0; i < numerosJugados.length; i++) {
+                for (let j = 0; j < numerosSorteados.length; j++) {
+                    if (numerosJugados[i] === numerosSorteados[j]) {
+                        gurdado.push(numerosSorteados[j])
+                    }
+
+                }
+            }
+            let jugador = 'segui participando'
+            console.log(gurdado.json)
+            if (gurdado.length == 6) {
+                jugador = 'Ganaste'
+                    //return jugador
+            }
+            //return jugador
+            console.log(jugador)
+
+        }
+    </script>
+</body>
+
+</html>
