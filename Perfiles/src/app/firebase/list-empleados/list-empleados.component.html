@@ -2,7 +2,7 @@
 <!--admin: https://console.firebase.google.com/project/empleados-93ba2/firestore/data~2Fitems~2FgqGNEXUzobdLxcvhuWzM -->
 <!-- pasos de configurar firebase: https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md -->
 <!-- animaciones: https://www.npmjs.com/package/ngx-toastr  -->
-<section class="container">
+<section class="container" style="background-color: rgb(175, 255, 198);">
     <span class="h3 text-center w-100">Lista de Empleado</span>
     <article class="col d-flex justify-content-end pb-2">
         <div class="icon btn btn-outline-danger" [routerLink]="['/addFirebase']"><i class="fas fa-user-plus"></i> Agregar</div>
@@ -27,7 +27,7 @@
                 <td>{{item.apellido}}</td>
                 <td>{{item.edad}}</td>
                 <td class="d-inline-flex w-100" style="font-size: 23px;">
-                    <div [routerLink]="['/editFirebase/',item.id]" class="editar w-50 " style="color:rgb(56, 255, 0);"><i class="fas fa-edit btn btn-outline-warning"></i></div>
+                    <div [routerLink]="['/editFirebase/',item.id]" class="editar w-50 " style="color:rgb(15, 69, 248);"><i class="fas fa-edit btn btn-outline-primary"></i></div>
                     <div (click)="delEmpleado(item.id)" class="eliminar w-50" style="color:rgb(221, 24, 24);"> <i class="fas fa-trash-alt btn btn-outline-danger"></i></div>
                 </td>
             </tr>

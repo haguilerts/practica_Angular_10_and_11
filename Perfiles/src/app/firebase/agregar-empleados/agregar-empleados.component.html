@@ -1,3 +1,6 @@
+<!-- https://pixabay.com/es/ -->
+<!-- plantilas de boortrap: https://bootswatch.com/ -->
+<!-- git de Angular de foto: https://github.com/leifermendez/curso-angular-11/blob/main/src/app/subir-archivo/subir-archivo.component.ts -->
 <section class="container">
     <article class="row justify-content-center">
 
@@ -29,6 +32,20 @@
                             <div id="validationServer05Feedback" class="invalid-feedback">
                                 mal ingresado la edad
                             </div>
+                        </div>
+                    </div>
+                    <div class="row col-12">
+                        <div class="col mb-3">
+                            <label for="img">Ingrese una imagen</label>
+                            <input type="file" (change)="capturarFile($event)" class="form-control is-invalid" id="img" required formControlName="img">
+                            <div id="validationServer05Feedback" class="invalid-feedback">
+                                mal ingresado la img
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="urlImg" class="row col-12">
+                        <div class="col mb-3 text-center">
+                            <img [src]="urlImg" alt=".." width="200">
                         </div>
                     </div>
                     <div class="row d-flex flex-row-reverse justify-content-center m-3">

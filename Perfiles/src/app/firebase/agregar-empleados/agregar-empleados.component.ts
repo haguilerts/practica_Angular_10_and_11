@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -17,12 +18,17 @@ export class AgregarEmpleadosComponent implements OnInit {
   id:string | null;
   title:string
   enviar:string
-  constructor( private url:ActivatedRoute, private ruter:Router, private fb:FormBuilder, private empleado:EmpleadoFirebaseService,private toastr: ToastrService ) {
+
+  archivo:any[]
+  urlImg:string;
+  loading:boolean;
+  constructor( private sanitizer: DomSanitizer,private url:ActivatedRoute, private ruter:Router, private fb:FormBuilder, private empleado:EmpleadoFirebaseService,private toastr: ToastrService ) {
       this.form=this.fb.group({
         name:['',Validators.required],
         surname:['',Validators.required],
         age:['',Validators.required]
       })
+    this.loading=false
     this.login=false
     this.enviar=''
     this.title='Agregar Empleados'
@@ -130,6 +136,66 @@ export class AgregarEmpleadosComponent implements OnInit {
     })
 
   }
- 
+  capturarFile(event){
+    const imagen = event.target.files[0];
+    console.log(imagen);
+    this.blobFile(imagen)
+    .then((img:any)=>{
+     /*  console.log(img) */
+      this.urlImg=img.base
+    })
+    /* if (['image'].includes(imagen.type)) {
+      console.log('Si es una imagen');
+      this.archivo.push(imagen)
+      this.blobFile(imagen).then((res: any) => {
+        this.urlImg = res.base;
+
+      })
+    } else {
+      console.log('No es imagen');
+
+    } */
+
+  }
+  loadImages = () => {
+    try {
+      const formData = new FormData();
+      this.archivo.forEach((item) => {
+        formData.append('files', item)
+      });
+      this.loading = true;
+     /*  this.rest.post(`http://localhost:3001/upload`, formData)
+        .subscribe(res => {
+          this.loading = false;
+          console.log('Carga exitosa');
+
+
+        }); */
+    } catch (e) {
+      console.log('ERROR', e);
+
+    }
+  }
+  blobFile = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+
+    } catch (e) {
+      return null;
+    }
+  })
   
 }
