@@ -35,17 +35,24 @@
             <ul>
                 <li *ngFor="let n of obj; let i= index ">{{i}}: {{n.id}} | {{n.name}} | {{n.age}} | {{n.sexo}}</li>
             </ul>
+            <h2>>------------ > @input >------------</h2>
+            <b>--> Ingresado valores: "nombre='Dionicio' edad=45 surname='Aguilar'"</b>
             <app-alerta nombre='Dionicio' edad=45 surname='Aguilar'></app-alerta>
+
+            <b>--> Sin valores...</b>
             <app-alerta></app-alerta>
+
+            <b>--> Ingresado valores: "surname='Aguilar' edad=20"</b>
             <app-alerta surname='Aguilar' edad=20></app-alerta>
+
             <h2>>------------ > @Output >------------</h2>
             <app-alerta [myPeli]='obj' (alertaPulsada)='onAlertaRecibido($event)'></app-alerta>
             <p>mi mensaje recibido: {{output}}</p>
         </article>
 
         <article class="col-6 border border-2">
-            <h2>comunicacion entre Padre e Hijos</h2>
-            <!-- <app-formulario></app-formulario> -->
+            <h2>Renderer2 (DOM en Angular)</h2>
+            <app-dom></app-dom>
         </article>
 
         <article class="col-6 bg-light ">

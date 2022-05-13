@@ -1,11 +1,15 @@
-<p>
-    nombre: {{nombre}} | Apellido: {{apellido}} | Edad: {{edad}}</p>
-<ul>
-    <li *ngFor="let n of pel; let i= index ">{{i}}: {{n.id}} | {{n.name}} | {{n.age}} | {{n.sexo}}</li>
-</ul>
+<article style="border: 1px ridge white;">
+    <p>
+        nombre: {{nombre}} | Apellido: {{apellido}} | Edad: {{edad}}</p>
+    <ul>
+        <li *ngFor="let n of pel; let i= index ">{{i}}: {{n.id}} | {{n.name}} | {{n.age}} | {{n.sexo}}</li>
+    </ul>
 
 
-<div>
-    <p>Enviar el valor desde el hijo:</p>
-    <button (click)="onclick()" class="btn btn-outline-success">Enviar @Output</button>
-</div>
+    <div>
+        <strong>Enviar el valor desde el hijo:  </strong>
+        <button (click)="onclick()" class="btn btn-outline-success">Enviar @Output</button>
+    </div>
+</article>
+
+<hr>

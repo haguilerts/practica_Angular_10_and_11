@@ -24,7 +24,7 @@ export class RegistroProducComponent implements OnInit {
     for (const item of this.arryProd) {
       pTotal+=(item.precio * (item.cantidad+1))
     }
-    console.log(`pTotal: ${pTotal}`)
+    //console.log(`pTotal: ${pTotal}`)
     return pTotal;
   }
   onDelite(id){

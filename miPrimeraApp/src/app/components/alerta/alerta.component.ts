@@ -16,6 +16,7 @@ export class AlertaComponent implements OnInit {
   @Input('surname') apellido:string;
   @Input() edad:number;
   @Input('myPeli') pel:Persona[];
+  
   @Output() alertaPulsada:EventEmitter<string>
 
 

@@ -41,7 +41,6 @@ enum Estado{
     Offline,    // 0
     Indefinido, // 1
     online,      // 2
-
 }
 enum MyEstado{
     Offline=-1,     // -1

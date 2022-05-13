@@ -1,0 +1,98 @@
+<!-- Skip to content Search or jump to… Pull requests Issues Marketplace Explore @haguilerts 0utKast / firebase05 1 22 Code Issues Pull requests Actions Projects Wiki Security Insights firebase05/index.html @0utKast 0utKast firebase05 … Latest commit 560079c
+on 6 Dec 2016 History 1 contributor 103 lines (64 sloc) 1.97 KB
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Almacenamiento en Firebase</title>
+    <style media="screen">
+        body {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        #uploader {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton" />
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAkFY4FYBebWtMhLNU_eTk3YyBeybH4SHI",
+            authDomain: "realtime01-22595.firebaseapp.com",
+            databaseURL: "https://realtime01-22595.firebaseio.com",
+            storageBucket: "realtime01-22595.appspot.com",
+            messagingSenderId: "932316393961"
+        };
+        const firebaseConfig = {
+            apiKey: "AIzaSyAe5AsXPPDRgT4qIGvCUVQiRwi7UdjoqXI",
+            authDomain: "empleados-93ba2.firebaseapp.com",
+            databaseURL: '',
+            projectId: "empleados-93ba2",
+            storageBucket: "empleados-93ba2.appspot.com",
+            messagingSenderId: "1048720378485",
+            appId: "1:1048720378485:web:c1a459eaf53ee3135bc63c"
+        };
+
+        //firebase.initializeApp(config);
+        firebase.initializeApp(firebaseConfig);
+
+        // Obtener Elementos
+        var uploader = document.getElementById('uploader');
+        var fileButton = document.getElementById('fileButton');
+
+        // Vigilar selección archivo
+        fileButton.addEventListener('change', function(e) {
+            //Obtener archivo
+            var file = e.target.files[0];
+
+            // Crear un storage ref
+            var storageRef = firebase.storage().ref('mis_fotos/' + file.name);
+
+
+            // Subir archivo
+            var task = storageRef.put(file);
+
+            // Actualizar barra progreso
+            task.on('state_changed',
+
+                function progress(snapshot) {
+                    var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    uploader.value = percentage;
+                },
+
+                function error(err) {
+
+                },
+                function complete() {
+
+
+                }
+            )
+        });
+    </script>
+
+</body>
+
+</html>
+© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog About Loading complete

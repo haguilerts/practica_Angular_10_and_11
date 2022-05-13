@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { promise } from 'selenium-webdriver';
+
 
 @Injectable({
   providedIn: 'root'

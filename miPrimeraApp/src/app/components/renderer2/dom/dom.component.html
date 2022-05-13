@@ -1,0 +1,36 @@
+<h1 class="text-center text-white">Dom de bienvenido</h1>
+<article class="col">
+    <button #btntext class="btn btn-outline-primary" (click)="change()">cambiar texto</button>
+    <button #btnimg class="btn btn-outline-secondary" (click)="changeimg()">cambiar img</button>
+    <button #btncontainer class="btn btn-outline-success" (click)="containerText()">add </button>
+
+
+</article>
+<article>
+    <h1 #asTilte>Titulo de texto</h1>
+    <img #asImg src="../../../../assets/productos/bebida1.jpg" alt="..">
+    <p #container>Querido.. </p>
+    <p #contenedor>Escribir..</p>
+
+
+</article>
+<article #article>
+    <button (click)="insertBeforeDiv1()">btn Before Div1</button>
+
+    <button (click)="insertBeforeDiv2()">btn Before Div2</button>
+
+    <button (click)="insertBeforeDiv3()">btn Before Div3</button>
+    <div #div1 style="border: 1px solid white;">este es el div 1
+        <p #Pchild class="text-center" style="border: 1px solid green;">"child p"</p>
+    </div>
+    <div #div2 style="border: 1px solid white;"> este es el div 2
+        <div #div3 style="border: 1px solid green; margin: 5px;">
+            div 3 <br>
+            <strong #broder class="st1" (click)="elimina()">hermano1 <p>--> no eliminado</p></strong> <br>
+
+            <strong #hermano class="st2" (click)="elimina()">hermano2 <p>-->  eliminado</p> </strong> <br>
+
+            <strong #broder>hermano3</strong>
+        </div>
+    </div>
+</article>

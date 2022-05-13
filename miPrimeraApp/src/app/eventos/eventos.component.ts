@@ -83,8 +83,11 @@ export class EventosComponent implements OnInit {
     let input=document.querySelector('#name')
     if(input.classList[2]=='foco'){
       input.classList.replace('foco','blur')
+      console.log('ok')
     }else{
       input.classList.add('foco')
+      console.log('noo ok')
+
     }
   }
 }

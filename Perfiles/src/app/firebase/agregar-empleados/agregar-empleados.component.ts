@@ -22,7 +22,9 @@ export class AgregarEmpleadosComponent implements OnInit {
   archivo:any[]
   urlImg:string;
   loading:boolean;
-  constructor( private sanitizer: DomSanitizer,private url:ActivatedRoute, private ruter:Router, private fb:FormBuilder, private empleado:EmpleadoFirebaseService,private toastr: ToastrService ) {
+  constructor( private sanitizer: DomSanitizer,private url:ActivatedRoute,
+    private ruter:Router, private fb:FormBuilder,
+    private empleado:EmpleadoFirebaseService,private toastr: ToastrService ) {
       this.form=this.fb.group({
         name:['',Validators.required],
         surname:['',Validators.required],
@@ -44,9 +46,10 @@ export class AgregarEmpleadosComponent implements OnInit {
       this.title='Editar Empleados'
       this.login=true
       this.enviar='Guardar'
-      this.empleado.editEmpleado(this.id).subscribe(data=>{
+      this.empleado.editEmpleado(this.id)
+      .subscribe(data=>{
         //console.log(data.payload.data()['nombre'])
-      this.login=false
+        this.login=false
         this.form.setValue({
           name: data.payload.data()['nombre'],
           surname: data.payload.data()['apellido'],

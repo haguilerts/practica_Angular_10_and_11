@@ -6,8 +6,10 @@ import { HttpClientModule } from '@angular/common/http'
 import localeEs from '@angular/common/locales/es'
 import { registerLocaleData } from '@angular/common'
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
+//firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+//--------------------------------------
 import { environment } from 'src/environments/environment';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToastrModule } from 'ngx-toastr';
@@ -41,6 +43,8 @@ import { ListEmpleadosComponent } from './firebase/list-empleados/list-empleados
 import { AgregarEmpleadosComponent } from './firebase/agregar-empleados/agregar-empleados.component';
 import { MenuHederComponent } from './menu-heder/menu-heder.component';
 import { TrasnlatePipe } from './firebase/agregar-empleados/trasnlate.pipe';
+
+import { FirebaseModule } from './firebase/firebase.module';
 
 
 registerLocaleData(localeEs)
@@ -84,6 +88,7 @@ registerLocaleData(localeEs)
     AngularFirestoreModule,
     MatFormFieldModule,
     ToastrModule.forRoot(),
+    FirebaseModule,
     //GoogleMapsModule,
    // GoogleMapsAngularModule,
  

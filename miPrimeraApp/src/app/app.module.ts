@@ -1,6 +1,8 @@
 import { NgModule,  } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
+
 
 import { AppComponent } from './app.component';
 import { SaludarComponent } from './saludar/saludar.component';
@@ -14,7 +16,6 @@ import { CronometroComponent } from './arimetica/cronometro/cronometro.component
 import { PrimoComponent } from './tio1/primo/primo.component';
 import { CalculadoraComponent } from './arimetica/calculadora/calculadora.component';
 import { AlertaComponent } from './components/alerta/alerta.component';
-//import { FormularioComponent } from './components/formulario/Formulario.component';
 import { FormComponent } from './components/form/form.component';
 import { ListaComponent } from './components/lista/lista.component';
 import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
@@ -28,6 +29,7 @@ import { SubrayadoDirective } from './directivas/subrayado.directive';
 import { ListProducComponent } from './ListaCompras/list-produc/list-produc.component';
 import { ComprasListComponent } from './ListaCompras/compras-list/compras-list.component';
 import { MyFormularioComponent } from './ListaCompras/my-formulario/my-formulario.component';
+import { DOMComponent } from './components/renderer2/dom/dom.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { MyFormularioComponent } from './ListaCompras/my-formulario/my-formulari
     PrimoComponent,
     CalculadoraComponent,
     AlertaComponent,
-    //FormularioComponent,
+    
     FormComponent,
     ListaComponent,
     CicloVidaComponent,
@@ -56,7 +58,8 @@ import { MyFormularioComponent } from './ListaCompras/my-formulario/my-formulari
     SubrayadoDirective,
     ListProducComponent,
     ComprasListComponent,
-    MyFormularioComponent
+    MyFormularioComponent,
+    DOMComponent
   ],
   imports: [
     BrowserModule,
